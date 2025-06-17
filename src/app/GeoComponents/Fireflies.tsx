@@ -8,7 +8,7 @@ import { AdditiveBlending, BufferAttribute, Points as ThreePoints } from "three"
 
 export const Fireflies: React.FC = () => {
   const count = 60;
-  const R = 7;
+  const R = 5;
   const r = 1;
   const yVariance = 0.5;
   const scale = 1.5;

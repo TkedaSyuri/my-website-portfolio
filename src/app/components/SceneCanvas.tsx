@@ -11,6 +11,7 @@ import { ClicketSound } from "../GeoComponents/ClicketSound";
 import { Fireflies } from "../GeoComponents/Fireflies";
 import StonePlane from "../GeoComponents/StonePlane";
 import GrassPlane from "../GeoComponents/GrassPlane";
+import GeoTree from "../GeoComponents/GeoTree";
 
 const SceneCanvas: React.FC = () => {
   const controlsRef = useRef<ThreeOrbitControls>(null!);
@@ -26,11 +27,12 @@ const SceneCanvas: React.FC = () => {
           far={1000}
         />
 
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.2} />
         <BornFire />
         <StonePlane/>
         <GrassPlane/>
         <Fireflies/>
+        <GeoTree/>
         {/* 焚き火の音 */}
         <FireSound url="/sounds/fire_sound.mp3" />
         <ClicketSound url="/sounds/cricket_sound.mp3" />
