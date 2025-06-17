@@ -15,7 +15,7 @@ const GrassPlane = () => {
           map={glassFieldTexture}
           side={DoubleSide}
           displacementMap={glassFieldTexture}
-          displacementScale={0.8}
+          displacementScale={0.9}
         />
       </Plane>
     </>

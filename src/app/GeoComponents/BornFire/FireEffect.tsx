@@ -14,6 +14,7 @@ declare module "@react-three/fiber" {
       ref?: React.Ref<ShaderMaterial & { uTime: number }>;
       color?: string;
     };
+    
   }
 }
 

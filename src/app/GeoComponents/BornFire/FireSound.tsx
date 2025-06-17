@@ -17,32 +17,39 @@ interface FireSoundProps {
 export const FireSound: React.FC<FireSoundProps> = ({
   url,
   distance = 5,
-  volume = 0.5,
+  volume = 0.6,
   loop = true,
   position = [0, 0, 0],
 }) => {
   const soundRef = useRef<AudioWithContext>(null!);
 
   useEffect(() => {
-    const tryPlay = () => {
+    const handler = async () => {
       const audio = soundRef.current;
-      if (!audio) {
-        // まだセットされてなければ再トライ
-        setTimeout(tryPlay, 50);
-        return;
+      if (!audio) return;
+
+      if (audio.context.state === "suspended") {
+        await audio.context.resume();
       }
-      // AudioContext resume & パラメータ
-      if (audio.context.state === "suspended") audio.context.resume();
+
       audio.setRefDistance(distance);
       audio.setLoop(loop);
       audio.setVolume(volume);
 
-      // すでに鳴っていなければ play()
       if (!audio.isPlaying) {
         audio.play();
       }
+
+      // 一度実行したら不要なのでイベントリスナーを外す
+      window.removeEventListener("click", handler);
     };
-    tryPlay();
+
+    // 最初のユーザー操作で開始するようにイベントを登録
+    window.addEventListener("click", handler);
+
+    return () => {
+      window.removeEventListener("click", handler);
+    };
   }, [url, distance, loop, volume]);
 
   return (
@@ -52,7 +59,7 @@ export const FireSound: React.FC<FireSoundProps> = ({
         url={url}
         distance={distance}
         loop={loop}
-        autoplay={false} // 自前で制御するので data-autoplay は false に
+        autoplay={false} // 明示的に false
       />
     </group>
   );

@@ -13,8 +13,8 @@ const BornFire = () => {
 
   return (
     <group>
-      {[...Array(10)].map((_, i) => {
-        const angle = (Math.PI / 5) * i; // 360°/40本
+      {[...Array(11)].map((_, i) => {
+        const angle = (Math.PI / 6) * i; // 360°/40本
         const offset = (Math.random() - 0.5) * 0.1; // 高さばらつき
 
         return (
