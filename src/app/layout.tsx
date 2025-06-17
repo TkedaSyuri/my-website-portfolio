@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Takeda Syuri ",
   description: "My website",
+    icons:{
+    icon:"/favicon.ico"
+  }
+
 };
 
 export default function RootLayout({
