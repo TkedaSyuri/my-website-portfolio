@@ -18,15 +18,12 @@ const FireLight = () => {
   return (
     <pointLight
       ref={light}
-      position={[0, 1, 0]}   /* 炎の少し上 */
+      position={[0, 4, 0]}   /* 炎の少し上 */
       color="#ff9020"        /* 暖色を強めに */
       intensity={100}        /* 初期値（上書きされてもOK） */
-      distance={30}          /* 影響半径 */
+      distance={100}          /* 影響半径 */
       decay={1.6}            /* 距離減衰：1.0〜2.0 */
       castShadow             /* 影を落とす */
-      /* shadow.mapSize を下げたいなら↓ */
-      // shadow-mapSize-width={512}
-      // shadow-mapSize-height={512}
     />
   );
 };

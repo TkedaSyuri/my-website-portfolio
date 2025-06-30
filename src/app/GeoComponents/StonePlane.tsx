@@ -28,9 +28,9 @@ const StoneCircle: React.FC = () => {
 
   return (
     <Circle
-      args={[2.8, 128]}
+      args={[2.8, 15,12]}
       rotation={[-Math.PI / 2, 0, 0]}
-      position={[0, -0.2, 0]}
+      position={[0, -0.23, 0]}
     >
       <meshStandardMaterial
         map={map}
@@ -38,7 +38,7 @@ const StoneCircle: React.FC = () => {
         transparent                // ← 必須
         side={DoubleSide}
         displacementMap={map}
-        displacementScale={0.8}
+        displacementScale={0.9}
       />
     </Circle>
   );

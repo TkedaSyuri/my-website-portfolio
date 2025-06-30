@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera} from "@react-three/drei";
 import type { OrbitControls as ThreeOrbitControls } from "three-stdlib";
 
 import BornFire from "../GeoComponents/BornFire/BornFire";
@@ -17,17 +17,17 @@ const SceneCanvas: React.FC = () => {
   const controlsRef = useRef<ThreeOrbitControls>(null!);
 
   return (
-    <div className="w-full h-screen bg-black absolute inset-0 z-10">
+    <div className="w-full h-screen  absolute inset-0 z-10">
       <Canvas>
         <PerspectiveCamera
           makeDefault
-          position={[1, 4, 8]}
+          position={[8, 6, 10]}
           fov={60}
           near={0.1}
           far={1000}
         />
 
-        <ambientLight intensity={0.2} />
+        <ambientLight intensity={0.1} />
         <BornFire />
         <StonePlane/>
         <GrassPlane/>

@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Takeda Syuri - Blog",
+  title: "Takeda Syuri",
   description: "This is Takeda Syuri Blog",
 };
 
 
- const PortfolioLayout = ({
+ const ProfileLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -18,4 +18,4 @@ export const metadata: Metadata = {
   );
 };
 
-export default PortfolioLayout;
+export default ProfileLayout;

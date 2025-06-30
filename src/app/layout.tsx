@@ -13,12 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Takeda Syuri ",
+  title: "Takeda Syuri",
   description: "My website",
-    icons:{
-    icon:"/favicon.ico"
-  }
-
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -29,15 +28,13 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased
-                    relative w-full h-screen overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable}   antialiased  relative w-full h-screen `}
       >
-        
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-black  ">
           <SceneCanvas />
         </div>
 
-        <div className="relative z-20">{children}</div>
+        <div className="relative z-20 ">{children}</div>
       </body>
     </html>
   );

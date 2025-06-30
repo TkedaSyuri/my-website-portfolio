@@ -2,7 +2,7 @@ import { useGLTF } from '@react-three/drei'
 
 const GeoTree = () => {
   const treeModel = useGLTF('/gltf/tree/grass.gltf')
-  const count = 5; // 木の本数
+  const count = 4; // 木の本数
   const radius = 25; // 円の半径
 
   return (
