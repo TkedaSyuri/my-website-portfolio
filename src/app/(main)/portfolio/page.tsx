@@ -1,65 +1,42 @@
 "use client";
 
-import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImageBox1 } from "@/app/components/GSAP/ImageBox1";
 import { ImageBox2 } from "@/app/components/GSAP/ImageBox2";
+import { DescriptionBox1 } from "@/app/components/GSAP/DescriptionBox1";
+import { DescriptionBox2 } from "@/app/components/GSAP/DescriptionBox2";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const DescriptionBox = ({ children }: { children: React.ReactNode }) => {
-  const descRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    gsap.from(descRef.current, {
-      x: -100,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: descRef.current,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
-        markers: true,
-      },
-    });
-  }, []);
-
-  return (
-    <div ref={descRef} className="my-32">
-      {children}
-    </div>
-  );
-};
-
 export default function PortfolioPage() {
   return (
-    <main className="w-screen min-h-screen overflow-y-auto">
-      <div className="h-screen bg-emerald-500 flex items-center justify-center ">
-        Section1
-      </div>
-      <div className="min-h-screen flex flex-col items-center justify-center ">
-        <div className="flex justify-between w-full max-w-4xl space-x-16">
-          <ImageBox1>
-            <h2>画像Box</h2>
-          </ImageBox1>
-          <DescriptionBox>
+    <main className="w-screen h-full overflow-y-auto bg-black">
+      {/* セクション１ */}
+      <section className="h-screen flex flex-col items-center justify-between py-10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/hotel_room.png')] bg-cover bg-center filter blur-sm"></div>
+        <div className="flex items-center justify-center w-full max-w-4xl space-x-16">
+          <div>
+            <ImageBox1 />
+          </div>
+          <DescriptionBox1>
             <div className="flex flex-col items-center justify-evenly space-y-4">
-              <h1 className="text-2xl font-bold text-center ">
-                「リネンシステム (WEB)」
-              </h1>
-              <div className="font-semibold space-y-3">
-                <p className="text-xl font-bold border-b border-blue-600">
-                  説明
-                </p>
-                <p>
-                  ビジネスホテルで使用されるリネンシステムです。
-                  <br />
-                  客室状況の確認や、フロントスタッフと清掃員の相互連絡が可能です。
-                </p>
+              <div className="font-semibold bg-white p-6 px-10 rounded-2xl space-y-2">
+                <div className="mt-2 text-green-400 text-3xl font-bold flex justify-center items-center">
+                  <p>リネンシステム</p>
+                  <p className="text-black text-xl">( WEB )</p>
+                </div>
                 <div>
-                  <p className="text-xl font-bold border-b border-blue-600">
+                  <p className="text-xl font-bold border-b-2 my-2">説明</p>
+                  <p>
+                    ビジネスホテルで使用されるリネンシステムです。
+                    <br />
+                    客室状況の確認や、フロントスタッフと清掃員の相互連絡が可能です。
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xl mt-5 font-bold border-b-2 my-2">
                     使用した技術
                   </p>
                   <div className="flex items-center ">
@@ -76,33 +53,41 @@ export default function PortfolioPage() {
                   </div>
                   <div className="flex items-center ">
                     <h2>データベース：</h2>
-                    <p>Supabase </p>
+                    <p>Supabase</p>
                   </div>
                 </div>
               </div>
             </div>
-          </DescriptionBox>
+          </DescriptionBox1>
         </div>
-        <div className="flex justify-between w-full max-w-4xl space-x-16">
-          <ImageBox2>
-            <h2>画像Box</h2>
-          </ImageBox2>
-          <DescriptionBox>
+      </section>
+
+      {/* セクション2 */}
+      <section className="h-screen flex flex-col items-center justify-between py-10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/hotel_corridor.png')] bg-cover bg-center filter blur-sm"></div>
+        <div className="flex items-center justify-center w-full max-w-4xl space-x-16">
+          <div className="w-1/2 h-full">
+            <ImageBox2 />
+          </div>
+          <DescriptionBox2>
             <div className="flex flex-col items-center justify-evenly space-y-4">
-              <h1 className="text-2xl font-bold text-center ">
-                「リネンシステム(アプリ)」
-              </h1>
-              <div className="font-semibold space-y-3">
-                <p className="text-xl font-bold border-b border-blue-600">
-                  説明
-                </p>
-                <p>
-                  ビジネスホテルで使用されるリネンシステムです。
-                  <br />
-                  客室状況の確認や、フロントスタッフと清掃員の相互連絡が可能です。<br/>主に清掃員が使用することを想定しています。
-                </p>
+              <div className="font-semibold bg-white p-6 px-8 rounded-2xl space-y-2">
+                <div className="mt-2 text-cyan-500 text-3xl font-bold flex justify-center items-center">
+                  <p>リネンシステム</p>
+                  <p className=" text-xl text-black">( アプリ )</p>
+                </div>
                 <div>
-                  <p className="text-xl font-bold border-b border-blue-600">
+                  <p className="text-xl font-bold border-b-2 my-2">説明</p>
+                  <p>
+                    ビジネスホテルで使用されるリネンシステムです。
+                    <br />
+                    客室状況の確認や、フロントスタッフと清掃員の相互連絡が可能です。
+                    <br />
+                    主に清掃員が使用することを想定しています。
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xl mt-5 font-bold border-b-2 my-2">
                     使用した技術
                   </p>
                   <div className="flex items-center ">
@@ -115,7 +100,7 @@ export default function PortfolioPage() {
                   </div>
                   <div className="flex items-center ">
                     <h2>ライブラリ：</h2>
-                    <p>Jotai, Drizzle, </p>
+                    <p>Jotai, Drizzle ORM</p>
                   </div>
                   <div className="flex items-center ">
                     <h2>データベース：</h2>
@@ -124,12 +109,112 @@ export default function PortfolioPage() {
                 </div>
               </div>
             </div>
-          </DescriptionBox>
+          </DescriptionBox2>
         </div>
-      </div>
-      <div className="h-72 flex items-center justify-center bg-purple-300">
-        <h2 className="text-3xl font-bold">Section3</h2>
-      </div>
+      </section>
+      {/* セクション3 */}
+      <section className="h-screen flex flex-col items-center justify-between py-10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/hotel_corridor.png')] bg-cover bg-center filter blur-sm"></div>
+        <div className="flex w-auto  items-center justify-center  max-w-4xl space-x-16">
+          <DescriptionBox2>
+            <div className="flex flex-col items-center justify-evenly space-y-6">
+              {/* 説明 */}
+              <div className="w-full max-w-5xl py-6 px-8 font-medium bg-white rounded-2xl space-y-6">
+                <div className="text-orange-500 text-2xl font-bold flex justify-center items-center">
+                  <p className="whitespace-nowrap">
+                    ECS on Fargate 構成によるブログ公開
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <p className="text-xl font-bold border-b-2">説明</p>
+                  <p>
+                    AWSのECS on Fargateでブログをデプロイしました。
+                    <br />
+                    フロントエンドからバックエンドまでを統合的に構築しています。
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <p className="text-xl font-bold border-b-2">使用した技術</p>
+
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-x-2">
+                    <p className="min-w-[120px]">AWSリソース：</p>
+                    <p className="text-gray-800">
+                      ALB, ECS, Fargate, RDS, Parameter Store など
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-x-2">
+                    <p className="min-w-[120px]">言語：</p>
+                    <p>TypeScript, Ruby</p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-x-2">
+                    <p className="min-w-[120px]">フレームワーク：</p>
+                    <p>Next.js, Ruby on Rails</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </DescriptionBox2>
+          <div className="w-1/2 h-full">
+            <ImageBox2 />
+          </div>
+        </div>
+      </section>
+      {/* セクション3 */}
+      <section className="h-screen flex flex-col items-center justify-between py-10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/hotel_corridor.png')] bg-cover bg-center filter blur-sm"></div>
+        <section className="flex items-center justify-center w-full max-w-4xl space-x-16">
+          <div className="w-1/2 h-full">
+            <ImageBox2 />
+          </div>
+          <DescriptionBox2>
+            <div className="flex flex-col items-center justify-evenly space-y-4">
+              <div className="font-semibold bg-white p-6 px-8 rounded-2xl space-y-2">
+                <div className="mt-2 text-orange-500 text-2xl font-bold flex justify-center items-center">
+                  <p>
+                    AWS CDKを活用した ECS on Fargate 構成とAPI
+                    Gateway,Lambdaによる自動構築
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xl font-bold border-b-2 my-2">説明</p>
+                  <p>
+                    ビジネスホテルで使用されるリネンシステムです。
+                    <br />
+                    客室状況の確認や、フロントスタッフと清掃員の相互連絡が可能です。
+                    <br />
+                    主に清掃員が使用することを想定しています。
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xl mt-5 font-bold border-b-2 my-2">
+                    使用した技術
+                  </p>
+                  <div className="flex items-center ">
+                    <h2>言語：</h2>
+                    <p>TypeScript</p>
+                  </div>
+                  <div className="flex items-center ">
+                    <h2>フレームワーク：</h2>
+                    <p>React Native, Hono.js</p>
+                  </div>
+                  <div className="flex items-center ">
+                    <h2>ライブラリ：</h2>
+                    <p>Jotai, Drizzle ORM</p>
+                  </div>
+                  <div className="flex items-center ">
+                    <h2>データベース：</h2>
+                    <p>Supabase</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </DescriptionBox2>
+        </section>
+      </section>
     </main>
   );
 }

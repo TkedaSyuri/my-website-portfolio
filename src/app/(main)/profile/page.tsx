@@ -24,7 +24,7 @@ const Profile = () => {
             </div>
             <div className="flex mt-1">
               <p>学歴：</p>
-              <p>九州産業大学　経済学部経済学科 卒業</p>
+              <p>九州産業大学 経済学部経済学科 卒業</p>
             </div>
           </div>
 
@@ -94,6 +94,8 @@ const Profile = () => {
               <ul className="list-disc pl-6 mt-2 ">
                 <li>Redux</li>
                 <li>Jotai</li>
+                <li>Prisma</li>
+                <li>Drizzle ORM</li>
                 <li>React Three Fiber</li>
                 <li>Three.js</li>
               </ul>

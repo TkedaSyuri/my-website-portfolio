@@ -1,32 +1,33 @@
-"use client";
-
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
-
-export const ImageBox1 = ({ children }: { children: React.ReactNode }) => {
+export const ImageBox1 = () => {
   const imageRef = useRef<HTMLDivElement>(null);
-  useGSAP(() => {
-    gsap.from(imageRef.current, {
-      x: -200,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: imageRef.current,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
-        markers: true,
-      },
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(imageRef.current, {
+        x: -200,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: 0.3,
+      });
     });
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div
-      ref={imageRef}
-      className="w-100 h-80 bg-blue-500 flex items-center justify-center text-white font-bold my-32"
-    >
-      {children}
+    <div ref={imageRef}>
+      <Image
+        src="/images/Portfolio1.png"
+        width={700}
+        height={600}
+        alt="ポートフォリオ１"
+        className="rounded-sm"
+      />
     </div>
   );
 };
