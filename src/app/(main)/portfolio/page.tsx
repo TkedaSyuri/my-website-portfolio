@@ -122,14 +122,14 @@ export default function PortfolioPage() {
               <div className="w-full max-w-5xl py-6 px-8 font-medium bg-white rounded-2xl space-y-6">
                 <div className="text-orange-500 text-2xl font-bold flex justify-center items-center">
                   <p className="whitespace-nowrap">
-                    ECS on Fargate 構成によるブログ公開
+                    CDK×API Gateway で ECS on Fargate ブログを一括構築・削除
                   </p>
                 </div>
 
                 <div className="space-y-2">
                   <p className="text-xl font-bold border-b-2">説明</p>
                   <p>
-                    AWSのECS on Fargateでブログをデプロイしました。
+                    AWSのECS on Fargate(ブログ)をデプロイしました。
                     <br />
                     フロントエンドからバックエンドまでを統合的に構築しています。
                   </p>
@@ -137,13 +137,6 @@ export default function PortfolioPage() {
 
                 <div className="space-y-2">
                   <p className="text-xl font-bold border-b-2">使用した技術</p>
-
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-x-2">
-                    <p className="min-w-[120px]">AWSリソース：</p>
-                    <p className="text-gray-800">
-                      ALB, ECS, Fargate, RDS, Parameter Store など
-                    </p>
-                  </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-x-2">
                     <p className="min-w-[120px]">言語：</p>
@@ -175,19 +168,13 @@ export default function PortfolioPage() {
               <div className="font-semibold bg-white p-6 px-8 rounded-2xl space-y-2">
                 <div className="mt-2 text-orange-500 text-2xl font-bold flex justify-center items-center">
                   <p>
-                    AWS CDKを活用した ECS on Fargate 構成とAPI
-                    Gateway,Lambdaによる自動構築
+                    「 CDK×API Gateway で ECS on Fargate ブログを一括構築・削除{" "}
+                    」で利用したブログサイト
                   </p>
                 </div>
                 <div>
                   <p className="text-xl font-bold border-b-2 my-2">説明</p>
-                  <p>
-                    ビジネスホテルで使用されるリネンシステムです。
-                    <br />
-                    客室状況の確認や、フロントスタッフと清掃員の相互連絡が可能です。
-                    <br />
-                    主に清掃員が使用することを想定しています。
-                  </p>
+                  <p>ECS on Fargateで構築した</p>
                 </div>
                 <div>
                   <p className="text-xl mt-5 font-bold border-b-2 my-2">
