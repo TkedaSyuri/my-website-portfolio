@@ -141,7 +141,6 @@ const Profile = () => {
 
           <ul className="list-disc pl-6">
             <li className=" mt-5">ITパスポート</li>
-            <li className=" mt-2">TOEIC R＆L ( 530 )</li>
           </ul>
         </div>
 
