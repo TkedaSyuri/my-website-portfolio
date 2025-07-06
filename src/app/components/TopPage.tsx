@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const TopPage = () => {
   const [statusMessage, setStatusMessage] = useState<string | null>(
-    "ビルド実行済み"
+    // "ビルド実行済み"
   );
   // useEffect(() => {
   //   const BuildMyBlogApi = async () => {

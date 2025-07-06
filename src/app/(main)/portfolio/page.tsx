@@ -3,9 +3,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { DescriptionBox1 } from "@/app/components/GSAP/DescriptionBox1";
 import { DescriptionBox } from "@/app/components/GSAP/DescriptionBox";
-import { ImageBox } from "@/app/components/GSAP/ImageBox";
 import PortfolioCard from "@/app/components/PortfolioCard";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -13,34 +11,39 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 export default function PortfolioPage() {
   return (
     <main className="w-screen h-full overflow-y-auto bg-black">
-      {/* セクション１ */}
-      <section className="h-screen flex flex-col items-center justify-between py-10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hotel_room.png')] bg-cover bg-center filter blur-sm"></div>
-        <div className="flex items-center justify-center w-full max-w-4xl space-x-16">
-            <ImageBox
-              imgSrc="Portfolio1.png"
-              imgSizeX={600}
-              imgSizeY={600}
-              direction="x"
-              triggerScroll={false}
-            />
-          <DescriptionBox1>
+      {/* ポートフォリオ1 */}
+      <PortfolioCard
+        bgImg="hotel_room.png"
+        imgSrc="Portfolio1.png"
+        imgSizeX={500}
+        imgSizeY={500}
+        direction="x"
+        directionValue={200}
+        start="90"
+        end="60"
+        triggerScroll={false}
+        DescriptionBox={
+          <DescriptionBox
+            direction="x"
+            directionValue={150}
+            start="90"
+            end="60"
+            triggerScroll={false}
+          >
             <div className="flex flex-col items-center justify-evenly space-y-4">
-              <div className="font-semibold bg-green-400 p-6 px-10 rounded-2xl space-y-2">
-                <p className="text-xl text-white  font-bold border-b-2 my-2">
+              <div className="font-semibold bg-green-600 p-6 px-8 rounded-2xl space-y-2">
+                <p className="text-xl text-white mt-5 font-bold border-b-2 my-2">
                   タイトル
                 </p>
-
-                <div className="mt-2 text-lg font-semibold ">
+                <div className="font-bold flex items-center">
                   <p>リネンシステム(web)</p>
                 </div>
                 <div>
-                  <p className="text-white text-xl font-bold border-b-2 my-2">
+                  <p className="text-xl text-white font-bold border-b-2 my-2">
                     説明
                   </p>
+                  <p>ビジネスホテルで使用されるリネンシステムです。</p>
                   <p>
-                    ビジネスホテルで使用されるリネンシステムです。
-                    <br />
                     客室状況の確認や、フロントスタッフと清掃員の相互連絡が可能です。
                   </p>
                 </div>
@@ -67,13 +70,16 @@ export default function PortfolioPage() {
                 </div>
               </div>
             </div>
-          </DescriptionBox1>
-        </div>
-      </section>
+          </DescriptionBox>
+        }
+      />
 
-      {/* セクション2 */}
+      {/* ポートフォリオ2 */}
       <PortfolioCard
+        bgImg="hotel_corridor.png"
         imgSrc="Portfolio2.png"
+        imgSizeX={400}
+        imgSizeY={400}
         direction="x"
         directionValue={200}
         start="90"
@@ -99,9 +105,12 @@ export default function PortfolioPage() {
                   <p className="text-xl text-white font-bold border-b-2 my-2">
                     説明
                   </p>
-                  <p> ビジネスホテルで使用されるリネンシステムです。</p>
                   <p>
-                    客室状況の確認や、フロントスタッフと清掃員の相互連絡が可能です。
+                    {" "}
+                    ビジネスホテルで使用されるリネンシステムのアプリ版です。
+                  </p>
+                  <p>
+                    客室状況の確認や、フロントスタッフと清掃員の相互連絡が可能です。主に清掃員が使用します。
                   </p>
                 </div>
                 <div>
@@ -131,8 +140,9 @@ export default function PortfolioPage() {
         }
       />
 
-      {/* セクション3 */}
+      {/* ポートフォリオ3 */}
       <PortfolioCard
+        bgImg="hotel_room.png"
         imgSrc="Portfolio2.png"
         direction="y"
         directionValue={200}
@@ -153,15 +163,13 @@ export default function PortfolioPage() {
                   タイトル
                 </p>
                 <div className=" font-bold ">
-                  <p>
-                   AWS ECS on Fargate でブログを構築
-                  </p>
+                  <p>AWS ECS on Fargate でブログを構築</p>
                 </div>
                 <div>
                   <p className="text-xl text-white font-bold border-b-2 my-2">
                     説明
                   </p>
-                  <p >AWS ECS on Fargateでブログを構築しました。</p>
+                  <p>AWS ECS on Fargateでブログを構築しました。</p>
                 </div>
                 <div>
                   <p className="text-xl text-white mt-5 font-bold border-b-2 my-2">
@@ -169,19 +177,15 @@ export default function PortfolioPage() {
                   </p>
                   <div className="flex items-center ">
                     <h2>言語：</h2>
-                    <p>TypeScript</p>
+                    <p>TypeScript, Ruby</p>
                   </div>
                   <div className="flex items-center ">
                     <h2>フレームワーク：</h2>
-                    <p>React Native, Hono.js</p>
+                    <p>Next.js, Ruby on Rails</p>
                   </div>
                   <div className="flex items-center ">
-                    <h2>ライブラリ：</h2>
-                    <p>Jotai, Drizzle ORM</p>
-                  </div>
-                  <div className="flex items-center ">
-                    <h2>データベース：</h2>
-                    <p>Supabase</p>
+                    <h2>インフラ：</h2>
+                    <p>AWS, Docker</p>
                   </div>
                 </div>
               </div>
@@ -190,8 +194,9 @@ export default function PortfolioPage() {
         }
       />
 
-      {/* セクション4 */}
+      {/* ポートフォリオ4 */}
       <PortfolioCard
+        bgImg="aws.png"
         imgSrc="Portfolio2.png"
         direction="y"
         directionValue={-200}
@@ -213,14 +218,66 @@ export default function PortfolioPage() {
                 </p>
                 <div className="font-bold flex justify-center items-center">
                   <p>
-                    CDK × API Gateway で ECS on Fargate ブログを一括構築・削除 
+                    CDK × API Gateway で ECS on Fargate ブログを一括構築・削除
                   </p>
                 </div>
                 <div>
                   <p className="text-xl text-white font-bold border-b-2 my-2">
                     説明
                   </p>
-                  <p>CDK × API Gatewayで「ECS on Fargateで構築したブログ」を自動で構築・削除</p>
+                  <p>
+                    CDK × API Gatewayで「ECS on
+                    Fargateで構築したブログ」を自動で構築・削除
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xl text-white mt-5 font-bold border-b-2 my-2">
+                    使用した技術
+                  </p>
+                  <div className="flex items-center ">
+                    <h2>インフラ：</h2>
+                    <p>AWS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </DescriptionBox>
+        }
+      />
+      {/* ポートフォリオ5 */}
+      <PortfolioCard
+        bgImg="my-homepage.png"
+        imgSrc="Portfolio5.png"
+        imgSizeX={600}
+        imgSizeY={600}
+        direction="x"
+        directionValue={200}
+        start="90"
+        end="60"
+        triggerScroll={true}
+        DescriptionBox={
+          <DescriptionBox
+            direction="x"
+            directionValue={150}
+            start="90"
+            end="60"
+            triggerScroll={true}
+          >
+            <div className="flex flex-col items-center justify-evenly space-y-4">
+              <div className="font-semibold bg-orange-500 p-6 px-8 rounded-2xl space-y-2">
+                <p className="text-xl text-white mt-5 font-bold border-b-2 my-2">
+                  タイトル
+                </p>
+                <div className=" font-bold flex  items-center">
+                  <p> 武田珠里　ホームページ</p>
+                </div>
+                <div>
+                  <p className="text-xl text-white font-bold border-b-2 my-2">
+                    説明
+                  </p>
+                  <p>
+                    自己紹介やポートフォリオ,過去に学習した技術の学習記録などを掲載しています。
+                  </p>
                 </div>
                 <div>
                   <p className="text-xl text-white mt-5 font-bold border-b-2 my-2">
@@ -232,11 +289,11 @@ export default function PortfolioPage() {
                   </div>
                   <div className="flex items-center ">
                     <h2>フレームワーク：</h2>
-                    <p>React Native, Hono.js</p>
+                    <p>Next.js</p>
                   </div>
                   <div className="flex items-center ">
                     <h2>ライブラリ：</h2>
-                    <p>Jotai, Drizzle ORM</p>
+                    <p>Three React Fiber, GSAP</p>
                   </div>
                   <div className="flex items-center ">
                     <h2>データベース：</h2>
