@@ -24,8 +24,6 @@ const TopPage = () => {
   //       if (data.status === "done") {
   //         setStatusMessage("構築完了");
   //       } else if (data.status === "starting") {
-  //         setStatusMessage("構築開始");
-  //       } else if (data.status === "running") {
   //         setStatusMessage("構築中");
   //       } else {
   //         console.log("不明なステータス:", data.status);
@@ -60,7 +58,7 @@ const TopPage = () => {
           href="record"
           className="hover:text-orange-400 hover:scale-110 duration-500  w-fit"
         >
-          学習記録
+          アーカイブ
         </Link>
       </ul>
       <p className="text-white">{statusMessage}</p>
