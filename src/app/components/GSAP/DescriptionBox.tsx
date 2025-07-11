@@ -1,66 +1,58 @@
-import { useEffect, useRef } from "react";
+"use client";
+import {useRef, useImperativeHandle, forwardRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 
-interface DescriptionBox {
+interface DescriptionBoxProps {
   children: React.ReactNode;
-  start?: string;
-  end?: string;
-  direction: "x" | "y";
-  directionValue?: number;
-  triggerScroll: boolean;
 }
 
-gsap.registerPlugin(ScrollTrigger);
+export interface DescriptionBoxHandle {
+  scrollNext: () => void;
+  scrollBack: () => void;
+  scrollDown: () => void;
+}
 
-export const DescriptionBox: React.FC<DescriptionBox> = (props) => {
-  const { children,direction,directionValue, start, end, triggerScroll } = props;
+// forwardRef でコンポーネントを作成し、ref 経由で scrollNext を使えるように
+export const DescriptionBox = forwardRef<
+  DescriptionBoxHandle,
+  DescriptionBoxProps
+>(({ children }, ref) => {
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const descRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    if (!triggerScroll) return;
-
-    const tl = gsap.timeline({
-      delay: 0.5,
-      duration: 3,
-
-      scrollTrigger: {
-        trigger: descRef.current,
-        start: `top ${start}%`,
-        end: `top ${end}%`,
-        scrub: 1.5,
-        markers: true,
-      },
-    });
-
-    tl.from(descRef.current, {
-      [direction]: directionValue,
-      opacity: 0,
-      delay: 1,
-      duration: 2,
-    });
-  }, []);
-
-  useEffect(() => {
-    if (triggerScroll) return;
-
-    const ctx = gsap.context(() => {
-      gsap.from(descRef.current, {
-        x: -100,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-        delay: 0.5,
+  useImperativeHandle(ref, () => ({
+    scrollNext: () => {
+      containerRef.current?.scrollBy({
+        left: containerRef.current.clientWidth,
+        behavior: "smooth",
       });
+    },
+    scrollBack: () => {
+      containerRef.current?.scrollBy({
+        left: -containerRef.current.clientWidth,
+        behavior: "smooth",
+      });
+    },
+    scrollDown: () => {
+    gsap.to(window, {
+      duration: 1.5,
+      scrollTo: { y: window.scrollY + window.innerHeight },
+      ease: "expo.out",
     });
-    return () => ctx.revert();
-  }, [triggerScroll]);
-
+  },
+  }));
+  
   return (
-    <div ref={descRef} className="my-32">
-      {children}
+    <div className="w-full h-[80vh]">
+      <div
+        ref={containerRef}
+        className="flex overflow-x-scroll space-x-8 snap-x snap-mandatory px-8 h-full"
+      >
+        {children}
+      </div>
     </div>
   );
-};
+});
+
+DescriptionBox.displayName = "DescriptionBox";

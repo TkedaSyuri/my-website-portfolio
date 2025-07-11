@@ -96,8 +96,8 @@ const Profile = () => {
                 <li>Jotai</li>
                 <li>Prisma</li>
                 <li>Drizzle ORM</li>
-                <li>React Three Fiber</li>
                 <li>Three.js</li>
+                <li>React Three Fiber</li>
               </ul>
             </div>
 
