@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import SceneCanvas from "./components/SceneCanvas";
+import SceneCanvas from "./components/Three/SceneCanvas";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,11 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable}   antialiased  relative w-full h-screen `}
       >
-        <div className="absolute inset-0 z-0 bg-black  ">
+        <div className="bg-black  inset-0 z-10 pointer-events-none absolute  ">
           <SceneCanvas />
         </div>
 
-        <div className="relative z-20 ">{children}</div>
+        <div className="relative ">{children}</div>
       </body>
     </html>
   );
