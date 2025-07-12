@@ -7,7 +7,7 @@ import type { PointsMaterial } from "three";
 import { AdditiveBlending, BufferAttribute, Points as ThreePoints } from "three";
 
 export const Fireflies: React.FC = () => {
-  const count = 60;
+  const count = 100;
   const R = 5;
   const r = 1;
   const yVariance = 0.5;
@@ -64,7 +64,7 @@ export const Fireflies: React.FC = () => {
         <PointMaterial
           ref={matRef}
           color="green"
-          size={0.09}
+          size={0.5}
           sizeAttenuation
           transparent
           opacity={1}

@@ -2,16 +2,15 @@
 
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera} from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import type { OrbitControls as ThreeOrbitControls } from "three-stdlib";
-
-import BornFire from "../GeoComponents/BornFire/BornFire";
-import { FireSound } from "../GeoComponents/BornFire/FireSound";
-import { ClicketSound } from "../GeoComponents/ClicketSound";
-import { Fireflies } from "../GeoComponents/Fireflies";
-import StonePlane from "../GeoComponents/StonePlane";
-import GrassPlane from "../GeoComponents/GrassPlane";
-import GeoTree from "../GeoComponents/GeoTree";
+import BornFire from "./BornFire/BornFire";
+import GrassPlane from "./GeoComponents/GrassPlane";
+import StonePlane from "./GeoComponents/StonePlane";
+import { Fireflies } from "./GeoComponents/Fireflies";
+import GeoTree from "./GeoComponents/GeoTree";
+import { FireSound } from "./BornFire/FireSound";
+import { ClicketSound } from "./GeoComponents/ClicketSound";
 
 const SceneCanvas: React.FC = () => {
   const controlsRef = useRef<ThreeOrbitControls>(null!);
@@ -29,10 +28,10 @@ const SceneCanvas: React.FC = () => {
 
         <ambientLight intensity={0.1} />
         <BornFire />
-        <StonePlane/>
-        <GrassPlane/>
-        <Fireflies/>
-        <GeoTree/>
+        <StonePlane />
+        <GrassPlane />
+        <Fireflies />
+        <GeoTree />
         {/* 焚き火の音 */}
         <FireSound url="/sounds/fire_sound.mp3" />
         <ClicketSound url="/sounds/cricket_sound.mp3" />

@@ -3,7 +3,7 @@ import Script from "next/script";
 
 const Profile = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center ">
+    <div className="min-h-screen flex items-center justify-center relative z-20 ">
       <div
         className="text-white max-w-6xl w-full p-8 rounded-2xl shadow-xl backdrop-blur-xs
         overflow-y-auto max-h-[80vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-500"
@@ -37,7 +37,8 @@ const Profile = () => {
               ものづくりの面白さを実感し、現在はNext.jsやTypeScriptを中心にWebアプリケーション開発に取り組んでいます。
             </p>
             <p>
-              最近はインフラ（AWS）や React Native に関心があり、これから AWS認定資格を 順次取得しつつ、React Native
+              最近はインフラ（AWS）や React Native に関心があり、これから
+              AWS認定資格を 順次取得しつつ、React Native
               を用いたアプリ開発にも取り組んでいく予定です。
             </p>
           </div>
@@ -116,35 +117,51 @@ const Profile = () => {
           <h2 className="text-2xl font-semibold border-b mt-8  border-blue-600">
             資格
           </h2>
-          <p className=" mt-4 font-semibold">AWS Certified</p>
-
-          <div className="flex flex-wrap gap-4 mt-2 text-white ">
-            <div
-              data-iframe-width="150"
-              data-iframe-height="240"
-              data-share-badge-id="ac846df1-563d-4042-a44c-1e1ea684ce84"
-              data-share-badge-host="https://www.credly.com"
-            ></div>
-            <div
-              data-iframe-width="150"
-              data-iframe-height="240"
-              data-share-badge-id="6c0e98bb-c1e6-4117-ad97-1392efd2eada"
-              data-share-badge-host="https://www.credly.com"
-            ></div>
+          <div>
+            <ul className="list-disc pl-6">
+              <li className=" mt-5">ITパスポート</li>
+            </ul>
           </div>
-
+          {/* AWS Certified */}
+          <div>
+            <h2 className=" mt-4 font-semibold">AWS Certified</h2>
+            <div className="flex gap-5">
+              <div>
+                <p>Solution Architect Associate</p>
+                <div>
+                  <div
+                    data-iframe-width="150"
+                    data-iframe-height="240"
+                    data-share-badge-id="ac846df1-563d-4042-a44c-1e1ea684ce84"
+                    data-share-badge-host="https://www.credly.com"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <p>Cloud Practitioner</p>
+                <div>
+                  <div
+                    data-iframe-width="150"
+                    data-iframe-height="240"
+                    data-share-badge-id="6c0e98bb-c1e6-4117-ad97-1392efd2eada"
+                    data-share-badge-host="https://www.credly.com"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
           <Script
             type="text/javascript"
             async
             src="//cdn.credly.com/assets/utilities/embed.js"
           />
-
-          <ul className="list-disc pl-6">
-            <li className=" mt-5">ITパスポート</li>
-          </ul>
         </div>
 
         <div className="mt-6 grid  gap-2space-x-4">
+          <h2 className="text-2xl font-semibold border-b mt-8  border-blue-600">
+            情報
+          </h2>
+
           <div className="flex">
             <p>Git Hub：</p>
             <Link

@@ -1,7 +1,7 @@
 import React, { useRef, useMemo, JSX } from "react";
 import { useFrame } from "@react-three/fiber";
 import { ShaderMaterial, MathUtils } from "three";
-import "../../shaders/FireShaderMaterial"; // fireShaderMaterial を extend するだけ
+import "../shaders/FireShaderMaterial"; 
 
 // 型定義
 type FireShaderMaterialType = {
