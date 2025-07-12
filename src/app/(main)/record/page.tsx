@@ -3,7 +3,7 @@ import React from "react";
 
 const RecordPage = () => {
   return (
-    <div>
+    <div className="relative z-20">
       {/* このページの説明 */}
       <p className="text-white">
         このページでは、これまでに学習してきたプログラミング言語、フレームワーク、ライブラリなどの技術を一覧形式で紹介しています。完成させたものだけでなく、途中まで取り組んだものも含めて掲載しています。

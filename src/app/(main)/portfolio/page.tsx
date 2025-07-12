@@ -23,7 +23,7 @@ export default function PortfolioPage() {
 
   return (
     // mainタグを後ほど修正
-    <main className="w-screen h-full overflow-y-auto bg-black">
+    <main className="w-screen h-full overflow-y-auto bg-black relative z-20">
       <main className="w-screen h-full overflow-y-auto bg-black">
         {/* ポートフォリオ1 */}
         <section className="relative  h-screen bg-cover bg-center flex flex-col justify-center items-center">
@@ -524,19 +524,21 @@ export default function PortfolioPage() {
                   概要
                 </h2>
                 <p className="text-2xl font-semibold">
-          CDK, API Gateway, Lambda,CodeBuildを用いて「AWS ECS on Fargate でブログを構築」を自動で構築・削除します。 就活中のAWSのコストを抑えるために作成しました。
+                  CDK, API Gateway, Lambda,CodeBuildを用いて「AWS ECS on Fargate
+                  でブログを構築」を自動で構築・削除します。
+                  就活中に運用するAWSのコストを最適化する為に作成しました。
                 </p>
               </div>
               <div>
                 <h2 className="mb-4 text-4xl  font-semibold  border-b-2">
-                  機能
+                  インフラ構成
                 </h2>
                 <ul className="pl-6 text-2xl font-semibold list-disc ">
-                  <li>客室状況の確認</li>
-                  <li>客室状況の変更</li>
-                  <li>清掃員の業務管理</li>
-                  <li>フロントと清掃員の相互連絡</li>
-                  <li>認証機能</li>
+                  <li>IaC：CDK</li>
+                  <li>API：API Gateway</li>
+                  <li>関数実行：Lambda</li>
+                  <li>ビルド：CodeBuild</li>
+                  <li>自動削除トリガー：EventBridge</li>
                 </ul>
               </div>
             </div>
