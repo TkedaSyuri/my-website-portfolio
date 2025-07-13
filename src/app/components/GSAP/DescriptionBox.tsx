@@ -1,5 +1,5 @@
 "use client";
-import {useRef, useImperativeHandle, forwardRef } from "react";
+import { useRef, useImperativeHandle, forwardRef } from "react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
@@ -9,9 +9,10 @@ interface DescriptionBoxProps {
 }
 
 export interface DescriptionBoxHandle {
+  scrollRight: () => void;
+  scrollLeft: () => void;
   scrollNext: () => void;
-  scrollBack: () => void;
-  scrollDown: () => void;
+  scrollTop: () => void;
 }
 
 // forwardRef でコンポーネントを作成し、ref 経由で scrollNext を使えるように
@@ -22,27 +23,34 @@ export const DescriptionBox = forwardRef<
   const containerRef = useRef<HTMLDivElement>(null);
 
   useImperativeHandle(ref, () => ({
-    scrollNext: () => {
+    scrollRight: () => {
       containerRef.current?.scrollBy({
         left: containerRef.current.clientWidth,
         behavior: "smooth",
       });
     },
-    scrollBack: () => {
+    scrollLeft: () => {
       containerRef.current?.scrollBy({
         left: -containerRef.current.clientWidth,
         behavior: "smooth",
       });
     },
-    scrollDown: () => {
-    gsap.to(window, {
-      duration: 1.5,
-      scrollTo: { y: window.scrollY + window.innerHeight },
-      ease: "expo.out",
-    });
-  },
+    scrollNext: () => {
+      gsap.to(window, {
+        duration: 1.5,
+        scrollTo: { y: window.scrollY + window.innerHeight },
+        ease: "expo",
+      });
+    },
+    scrollTop: () => {
+      gsap.to(window, {
+        duration: 1.5,
+        scrollTo: { y: -window.scrollY + window.innerHeight },
+        ease: "smooth",
+      });
+    },
   }));
-  
+
   return (
     <div className="w-full h-[80vh]">
       <div

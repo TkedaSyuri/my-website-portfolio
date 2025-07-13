@@ -11,9 +11,9 @@ interface SlideButtonProps {
 const SlideButton: React.FC<SlideButtonProps> = ({ direction, textColor, targetRef }) => {
   const handleClick = () => {
     if (direction === "right") {
-      targetRef.current?.scrollNext();
+      targetRef.current?.scrollRight();
     } else if (direction === "left") {
-            targetRef.current?.scrollBack();
+            targetRef.current?.scrollLeft();
     }
   };
 
