@@ -32,7 +32,6 @@ export default function PortfolioPage() {
     //     },
     //   });
     //   const data = await res.json();
-
     //   console.log(data.status);
     //   if (data.status === "running") {
     //     setStatusMessage("構築完了");
@@ -54,8 +53,7 @@ export default function PortfolioPage() {
   };
 
   return (
-    // mainタグを後ほど修正
-    <main className="w-screen h-full overflow-y-auto bg-black relative z-20">
+    <main className="w-screen h-full  bg-black relative z-20">
       {/* ポートフォリオ1 */}
       <section className="relative  h-screen bg-cover bg-center flex flex-col justify-center items-center">
         <h2 className="font-bold text-white text-4xl mb-4">
@@ -89,20 +87,22 @@ export default function PortfolioPage() {
             />
           </div>
 
-          <div className="flex flex-col gap-5  justify-evenly min-w-[80vw] bg-green-400 p-8 rounded-xl text-black snap-center ">
+          <div className="flex flex-col gap-10   min-w-[80vw] bg-green-400 p-8 rounded-xl text-black snap-center ">
             <div>
               <h2 className="text-4xl font-semibold  mb-4 border-b-2">概要</h2>
-              <p className="text-2xl font-semibold ">
-                ビジネスホテルで使用されるリネンシステムです。客室状況の確認や連絡が可能です。。
+              <p className="text-2xl  ">
+                ビジネスホテルで使用されるリネンシステムです。客室状況の確認や相互連絡が可能です。
               </p>
             </div>
-            <div>
+            <div className="mt-40">
               <h2 className="mb-4 text-4xl  font-semibold  border-b-2">機能</h2>
-              <ul className="pl-6 text-2xl font-semibold list-disc ">
+              <ul className="pl-6 text-2xl list-disc ">
                 <li>客室状況の確認</li>
                 <li>客室状況の変更</li>
-                <li>清掃員の業務管理</li>
-                <li>フロントと清掃員の相互連絡</li>
+                <li>
+                  清掃員の業務管理(フロントスタッフのみ業務の追加と削除ができます。)
+                </li>
+                <li>フロントスタッフと清掃員の相互連絡</li>
                 <li>認証機能</li>
               </ul>
             </div>
@@ -115,17 +115,16 @@ export default function PortfolioPage() {
                 <h3 className="text-3xl font-semibold mb-2 underline underline-offset-4">
                   フロントエンド
                 </h3>
-                <ul className="pl-6 font-semibold  space-y-1">
+                <ul className="pl-6  space-y-1">
                   <li>
-                    <span className="font-bold">言語：</span>TypeScript
+                    <span>言語：</span>TypeScript
                   </li>
                   <li>
-                    <span className="font-bold">フレームワーク：</span>
+                    <span>フレームワーク：</span>
                     Next.js
                   </li>
                   <li>
-                    <span className="font-bold">ライブラリ：</span>Redux ,
-                    Tailwind CSS
+                    <span>ライブラリ：</span>Redux , Tailwind CSS
                   </li>
                 </ul>
               </div>
@@ -135,19 +134,19 @@ export default function PortfolioPage() {
                 <h3 className="text-3xl font-semibold mb-2 underline underline-offset-2">
                   バックエンド
                 </h3>
-                <ul className="pl-6 font-semibold  space-y-1">
+                <ul className="pl-6 text-2xl  space-y-1">
                   <li>
-                    <span className="font-bold">言語：</span>TypeScript
+                    <span>言語：</span>TypeScript
                   </li>
                   <li>
-                    <span className="font-bold">フレームワーク：</span>
+                    <span>フレームワーク：</span>
                     Express.js
                   </li>
                   <li>
-                    <span className="font-bold">ライブラリ：</span>Prisma ORM
+                    <span>ライブラリ：</span>Prisma ORM
                   </li>
                   <li>
-                    <span className="font-bold">データベース：</span>Supabase
+                    <span>データベース：</span>Supabase
                   </li>
                 </ul>
               </div>
@@ -157,7 +156,7 @@ export default function PortfolioPage() {
                 <h3 className="text-3xl font-semibold mb-2 underline underline-offset-4">
                   インフラ・その他
                 </h3>
-                <ul className="pl-6 font-semibold space-y-1">
+                <ul className="pl-6  space-y-1">
                   <li>Vercel</li>
                   <li>Render</li>
                 </ul>
@@ -167,7 +166,7 @@ export default function PortfolioPage() {
 
           <div className="min-w-[80vw] bg-green-600 p-8 rounded-xl snap-center">
             <h2 className="text-4xl font-bold  mb-4 border-b-2">GitHub</h2>
-            <div className="flex flex-col gap-4 text-3xl">
+            <div className="flex flex-col gap-4 text-2xl">
               <p className=" font-semibold">
                 <span>フロントエンド:</span>
                 <Link
@@ -207,7 +206,8 @@ export default function PortfolioPage() {
         <h2 className="font-bold text-white text-4xl mb-4">
           リネンシステム (アプリ)
         </h2>
-        {/* スライドボタン(右) */}
+
+        {/* スライドボタン */}
         <div className="absolute right-4 top-1/2 -translate-y-1/2 z-50">
           <SlideButton
             direction="right"
@@ -215,7 +215,7 @@ export default function PortfolioPage() {
             targetRef={descriptionBoxRef2}
           />
         </div>
-        {/* スライドボタン(左) */}
+
         <div className="absolute left-4 top-1/2 -translate-y-1/2 z-50">
           <SlideButton
             direction="left"
@@ -223,26 +223,27 @@ export default function PortfolioPage() {
             targetRef={descriptionBoxRef2}
           />
         </div>
+
         <DescriptionBox ref={descriptionBoxRef2}>
-          <div className=" flex justify-center items-center min-w-[90vw] bg-[url('/images/hotel_room.png')] bg-center bg-cover bg-no-repeat p-8 rounded-xl  snap-center">
+          <div className="flex justify-center items-center min-w-[90vw] bg-[url('/images/hotel_room.png')] bg-center bg-cover bg-no-repeat bg-cyan-500 p-8 rounded-xl text-white snap-center">
             <Image
               src={`/images/portfolio2.png`}
-              width={400}
-              height={400}
+              width={300}
+              height={300}
               alt="ポートフォリオ"
             />
           </div>
 
-          <div className="flex flex-col gap-5 justify-evenly min-w-[80vw] bg-cyan-400 p-8 rounded-xl text-black snap-center ">
+          <div className="flex flex-col gap-5  min-w-[80vw] bg-cyan-400 p-8 rounded-xl text-black snap-center">
             <div>
-              <h2 className="text-4xl font-semibold  mb-4 border-b-2">概要</h2>
-              <p className="text-2xl font-semibold">
+              <h2 className="text-4xl font-semibold mb-4 border-b-2">概要</h2>
+              <p className="text-2xl ">
                 ビジネスホテルで使用されるリネンシステムです。客室状況の確認や連絡が可能です。主に客室清掃員が使用することを想定しています。
               </p>
             </div>
-            <div>
-              <h2 className="mb-4 text-4xl  font-semibold  border-b-2">機能</h2>
-              <ul className="pl-6 text-2xl font-semibold list-disc ">
+            <div className="mt-40">
+              <h2 className="mb-4 text-4xl font-semibold border-b-2">機能</h2>
+              <ul className="pl-6 text-2xl list-disc">
                 <li>客室状況の確認</li>
                 <li>客室状況の変更</li>
                 <li>清掃員の業務管理</li>
@@ -251,7 +252,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-around min-w-[80vw] bg-cyan-500 p-8 rounded-xl text-black snap-center">
+          <div className="min-w-[80vw] bg-cyan-500 p-8 rounded-xl text-black snap-center">
             <h2 className="mb-6 text-4xl font-semibold border-b-2">使用技術</h2>
             <div className="text-2xl">
               {/* フロントエンド */}
@@ -259,16 +260,15 @@ export default function PortfolioPage() {
                 <h3 className="text-3xl font-semibold mb-2 underline underline-offset-4">
                   フロントエンド
                 </h3>
-                <ul className="pl-6  font-semibold  space-y-1">
+                <ul className="pl-6 space-y-1">
                   <li>
-                    <span className="font-bold">言語：</span>TypeScript
+                    <span>言語：</span>TypeScript
                   </li>
                   <li>
-                    <span className="font-bold">フレームワーク：</span>
-                    React Native
+                    <span>フレームワーク：</span>React Native
                   </li>
                   <li>
-                    <span className="font-bold">ライブラリ：</span>Jotai
+                    <span>ライブラリ：</span>Jotai
                   </li>
                 </ul>
               </div>
@@ -278,19 +278,18 @@ export default function PortfolioPage() {
                 <h3 className="text-3xl font-semibold mb-2 underline underline-offset-2">
                   バックエンド
                 </h3>
-                <ul className="pl-6  font-semibold   space-y-1">
+                <ul className="pl-6 space-y-1">
                   <li>
-                    <span className="font-bold">言語：</span>TypeScript
+                    <span>言語：</span>TypeScript
                   </li>
                   <li>
-                    <span className="font-bold">フレームワーク：</span>
-                    Hono.js
+                    <span>フレームワーク：</span>Hono.js
                   </li>
                   <li>
-                    <span className="font-bold">ライブラリ：</span>Drizzle ORM
+                    <span>ライブラリ：</span>Drizzle ORM
                   </li>
                   <li>
-                    <span className="font-bold">データベース：</span>Supabase
+                    <span>データベース：</span>Supabase
                   </li>
                 </ul>
               </div>
@@ -300,7 +299,7 @@ export default function PortfolioPage() {
                 <h3 className="text-3xl font-semibold mb-2 underline underline-offset-4">
                   インフラ・その他
                 </h3>
-                <ul className="pl-6  font-semibold space-y-1">
+                <ul className="pl-6  space-y-1">
                   <li>Vercel</li>
                   <li>Render</li>
                 </ul>
@@ -309,8 +308,8 @@ export default function PortfolioPage() {
           </div>
 
           <div className="min-w-[80vw] bg-cyan-600 p-8 rounded-xl text-black snap-center">
-            <h2 className="text-4xl font-bold  mb-4 border-b-2">GitHub</h2>
-            <div className="text-3xl flex flex-col gap-8 ">
+            <h2 className="text-4xl font-bold mb-4 border-b-2">GitHub</h2>
+            <div className="flex flex-col gap-4 text-2xl">
               <p className="font-semibold">
                 <span>フロントエンド:</span>
                 <Link
@@ -338,7 +337,7 @@ export default function PortfolioPage() {
 
           <div
             onClick={() => descriptionBoxRef2.current?.scrollNext()}
-            className="flex justify-center items-center  min-w-[80vw] bg-red-600 hover:bg-red-500 duration-300 font-bold text-8xl  hover:text-9xl  p-8 rounded-xl text-white snap-center cursor-pointer"
+            className="flex justify-center items-center min-w-[80vw] bg-red-600 hover:bg-red-500 duration-300 font-bold text-8xl hover:text-9xl p-8 rounded-xl text-white snap-center cursor-pointer"
           >
             Next→
           </div>
@@ -371,26 +370,26 @@ export default function PortfolioPage() {
         <DescriptionBox ref={descriptionBoxRef3}>
           <div className=" flex justify-center items-center min-w-[90vw] bg-[url('/images/hotel_room.png')] bg-center bg-cover bg-no-repeat  p-8 rounded-xl  snap-center">
             <Image
-              src={`/images/portfolio1.png`}
+              src={`/images/blog.png`}
               width={800}
               height={800}
               alt="ポートフォリオ"
             />
           </div>
 
-          <div className="flex flex-col justify-around gap-8 min-w-[80vw] bg-red-500 p-8 rounded-xl text-white snap-center ">
+          <div className="flex flex-col  gap-8 min-w-[80vw] bg-red-500 p-8 rounded-xl text-white snap-center ">
             <div>
               <h2 className="text-4xl font-semibold  mb-4 border-b-2">概要</h2>
-              <p className="text-2xl font-semibold">
+              <p className="text-2xl ">
                 AWS ECS on
                 Fargateを活用してサーバーレスなアーキテクチャで、簡易的なブログを構築しました。
               </p>
             </div>
-            <div>
+            <div className="mt-40">
               <h2 className="mb-4 text-4xl  font-semibold  border-b-2">
                 インフラ構成
               </h2>
-              <ul className="pl-6 text-2xl font-semibold list-disc ">
+              <ul className="pl-6 text-2xl  list-disc ">
                 <li>
                   ECS (Fargate):フロントエンド/バックエンドをそれぞれ Fargate
                   サービスで構築。
@@ -407,7 +406,7 @@ export default function PortfolioPage() {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col  justify-around min-w-[80vw] bg-red-600 p-8 rounded-xl text-white snap-center">
+          <div className="flex flex-col  min-w-[80vw] bg-red-600 p-8 rounded-xl text-white snap-center">
             <h2 className="mb-6 text-4xl font-semibold border-b-2">
               ブログで使用した技術
             </h2>
@@ -417,16 +416,16 @@ export default function PortfolioPage() {
                 <h3 className="text-3xl font-semibold mb-2 underline underline-offset-4">
                   フロントエンド
                 </h3>
-                <ul className="pl-6  font-semibold  space-y-1">
+                <ul className="pl-6  space-y-1">
                   <li>
-                    <span className="font-bold">言語：</span>TypeScript
+                    <span>言語：</span>TypeScript
                   </li>
                   <li>
-                    <span className="font-bold">フレームワーク：</span>
+                    <span>フレームワーク：</span>
                     Next.js
                   </li>
                   <li>
-                    <span className="font-bold">ライブラリ：</span>
+                    <span>ライブラリ：</span>
                     Tailwind CSS
                   </li>
                 </ul>
@@ -437,12 +436,12 @@ export default function PortfolioPage() {
                 <h3 className="text-3xl font-semibold mb-2 underline underline-offset-2">
                   バックエンド
                 </h3>
-                <ul className="pl-6 font-semibold space-y-1">
+                <ul className="pl-6  space-y-1">
                   <li>
-                    <span className="font-bold">言語：</span>Ruby
+                    <span>言語：</span>Ruby
                   </li>
                   <li>
-                    <span className="font-bold">フレームワーク：</span>
+                    <span>フレームワーク：</span>
                     Ruby on Rails
                   </li>
                 </ul>
@@ -452,9 +451,8 @@ export default function PortfolioPage() {
                 <h3 className="text-3xl font-semibold mb-2 underline underline-offset-2">
                   インフラ・その他
                 </h3>
-                <ul className="pl-6 font-semibold   space-y-1">
+                <ul className="pl-6 space-y-1">
                   <li>
-                    <span className="font-bold"></span>
                     Docker
                   </li>
                 </ul>
@@ -464,8 +462,8 @@ export default function PortfolioPage() {
 
           <div className="min-w-[80vw] bg-red-700 p-8 rounded-xl text-white snap-center">
             <h2 className="text-4xl font-bold  mb-4 border-b-2">GitHub</h2>
-            <div className="text-3xl flex flex-col justify-center gap-8 ">
-              <h2 className="font-semibold underline-offset-3 underline ">
+            <div className="text-2xl flex flex-col justify-center gap-8 ">
+              <h2 className="text-3xl font-semibold underline-offset-3 underline ">
                 ブログのリソース
               </h2>
               <p className=" font-semibold">
@@ -607,7 +605,7 @@ export default function PortfolioPage() {
 
           <div className="min-w-[80vw] bg-pink-500 p-8 rounded-xl text-white snap-center ">
             <h2 className="text-4xl font-bold  mb-4 border-b-2">GitHub</h2>
-            <div className="text-3xl flex flex-col gap-4">
+            <div className="text-2xl flex flex-col gap-4">
               <p className="flex gap-3 font-semibold ">
                 <span>CDK:</span>
                 <Link
@@ -667,13 +665,13 @@ export default function PortfolioPage() {
           <div className="flex flex-col gap-5  justify-evenly min-w-[80vw] bg-orange-400 p-8 rounded-xl text-white snap-center ">
             <div>
               <h2 className="text-4xl font-semibold  mb-4 border-b-2">概要</h2>
-              <p className="text-2xl font-semibold">
+              <p className="text-2xl ">
                 ビジネスホテルで使用されるリネンシステムです。客室状況の確認や連絡が可能です。
               </p>
             </div>
             <div>
               <h2 className="mb-4 text-4xl  font-semibold  border-b-2">機能</h2>
-              <ul className="pl-6 text-2xl font-semibold list-disc ">
+              <ul className="pl-6 text-2xl list-disc ">
                 <li>客室状況の確認</li>
                 <li>客室状況の変更</li>
                 <li>清掃員の業務管理</li>
@@ -690,16 +688,16 @@ export default function PortfolioPage() {
               <h3 className="text-3xl font-semibold mb-2 underline underline-offset-4">
                 フロントエンド
               </h3>
-              <ul className="pl-6 text-xl font-semibold  space-y-1">
+              <ul className="pl-6 text-xl  space-y-1">
                 <li>
-                  <span className="font-bold">言語：</span>TypeScript
+                  <span>言語：</span>TypeScript
                 </li>
                 <li>
-                  <span className="font-bold">フレームワーク：</span>
+                  <span>フレームワーク：</span>
                   Next.js
                 </li>
                 <li>
-                  <span className="font-bold">ライブラリ：</span>Redux ,
+                  <span>ライブラリ：</span>Redux ,
                   Tailwind CSS
                 </li>
               </ul>
@@ -710,19 +708,19 @@ export default function PortfolioPage() {
               <h3 className="text-3xl font-semibold mb-2 underline underline-offset-2">
                 バックエンド
               </h3>
-              <ul className="pl-6 text-xl font-semibold   space-y-1">
+              <ul className="pl-6 text-xl  space-y-1">
                 <li>
-                  <span className="font-bold">言語：</span>TypeScript
+                  <span>言語：</span>TypeScript
                 </li>
                 <li>
-                  <span className="font-bold">フレームワーク：</span>
+                  <span>フレームワーク：</span>
                   Express.js
                 </li>
                 <li>
-                  <span className="font-bold">ライブラリ：</span>Prisma ORM
+                  <span>ライブラリ：</span>Prisma ORM
                 </li>
                 <li>
-                  <span className="font-bold">データベース：</span>Supabase
+                  <span>データベース：</span>Supabase
                 </li>
               </ul>
             </div>
@@ -732,7 +730,7 @@ export default function PortfolioPage() {
               <h3 className="text-3xl font-semibold mb-2 underline underline-offset-4">
                 インフラ・その他
               </h3>
-              <ul className="pl-6 text-xl font-semibold space-y-1">
+              <ul className="pl-6 text-xl space-y-1">
                 <li>Vercel</li>
                 <li>Render</li>
               </ul>
