@@ -11,7 +11,7 @@ import {
 import SlideButton from "@/app/components/SlideButton";
 import Image from "next/image";
 import Link from "next/link";
-
+import { PiArrowBendRightUpBold } from "react-icons/pi";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function PortfolioPage() {
@@ -124,7 +124,7 @@ export default function PortfolioPage() {
                     Next.js
                   </li>
                   <li>
-                    <span>ライブラリ：</span>Redux , Tailwind CSS
+                    <span>ライブラリ：</span>Redux
                   </li>
                 </ul>
               </div>
@@ -158,7 +158,6 @@ export default function PortfolioPage() {
                 </h3>
                 <ul className="pl-6  space-y-1">
                   <li>Vercel</li>
-                  <li>Render</li>
                 </ul>
               </div>
             </div>
@@ -268,7 +267,7 @@ export default function PortfolioPage() {
                     <span>フレームワーク：</span>React Native
                   </li>
                   <li>
-                    <span>ライブラリ：</span>Jotai
+                    <span>ライブラリ：</span>Jotai 
                   </li>
                 </ul>
               </div>
@@ -300,8 +299,8 @@ export default function PortfolioPage() {
                   インフラ・その他
                 </h3>
                 <ul className="pl-6  space-y-1">
-                  <li>Vercel</li>
-                  <li>Render</li>
+                  <li>Vercel / Render</li>
+                  
                 </ul>
               </div>
             </div>
@@ -424,10 +423,6 @@ export default function PortfolioPage() {
                     <span>フレームワーク：</span>
                     Next.js
                   </li>
-                  <li>
-                    <span>ライブラリ：</span>
-                    Tailwind CSS
-                  </li>
                 </ul>
               </div>
 
@@ -452,9 +447,7 @@ export default function PortfolioPage() {
                   インフラ・その他
                 </h3>
                 <ul className="pl-6 space-y-1">
-                  <li>
-                    Docker
-                  </li>
+                  <li>Docker</li>
                 </ul>
               </div>
             </div>
@@ -662,22 +655,13 @@ export default function PortfolioPage() {
             />
           </div>
 
-          <div className="flex flex-col gap-5  justify-evenly min-w-[80vw] bg-orange-400 p-8 rounded-xl text-white snap-center ">
+          <div className=" justify-evenly min-w-[80vw] bg-orange-400 p-8 rounded-xl text-white snap-center ">
             <div>
               <h2 className="text-4xl font-semibold  mb-4 border-b-2">概要</h2>
               <p className="text-2xl ">
-                ビジネスホテルで使用されるリネンシステムです。客室状況の確認や連絡が可能です。
+                このサイトでは、自己紹介・ポートフォリオ・アーカイブ(学習記録)を閲覧できます。WebGL ライブラリの React Three Fiber
+                やアニメーションライブラリのGSAPを用いて、ユーザー体験（UX）を意識した動きのあるUIを作成しました。
               </p>
-            </div>
-            <div>
-              <h2 className="mb-4 text-4xl  font-semibold  border-b-2">機能</h2>
-              <ul className="pl-6 text-2xl list-disc ">
-                <li>客室状況の確認</li>
-                <li>客室状況の変更</li>
-                <li>清掃員の業務管理</li>
-                <li>フロントと清掃員の相互連絡</li>
-                <li>認証機能</li>
-              </ul>
             </div>
           </div>
           <div className="min-w-[80vw] bg-orange-500 p-8 rounded-xl text-white snap-center">
@@ -688,7 +672,7 @@ export default function PortfolioPage() {
               <h3 className="text-3xl font-semibold mb-2 underline underline-offset-4">
                 フロントエンド
               </h3>
-              <ul className="pl-6 text-xl  space-y-1">
+              <ul className="pl-6 text-2xl  space-y-1">
                 <li>
                   <span>言語：</span>TypeScript
                 </li>
@@ -697,30 +681,7 @@ export default function PortfolioPage() {
                   Next.js
                 </li>
                 <li>
-                  <span>ライブラリ：</span>Redux ,
-                  Tailwind CSS
-                </li>
-              </ul>
-            </div>
-
-            {/* バックエンド */}
-            <div className="mb-8">
-              <h3 className="text-3xl font-semibold mb-2 underline underline-offset-2">
-                バックエンド
-              </h3>
-              <ul className="pl-6 text-xl  space-y-1">
-                <li>
-                  <span>言語：</span>TypeScript
-                </li>
-                <li>
-                  <span>フレームワーク：</span>
-                  Express.js
-                </li>
-                <li>
-                  <span>ライブラリ：</span>Prisma ORM
-                </li>
-                <li>
-                  <span>データベース：</span>Supabase
+                  <span>ライブラリ：</span>React Three Fiber / GSAP 
                 </li>
               </ul>
             </div>
@@ -730,9 +691,8 @@ export default function PortfolioPage() {
               <h3 className="text-3xl font-semibold mb-2 underline underline-offset-4">
                 インフラ・その他
               </h3>
-              <ul className="pl-6 text-xl space-y-1">
+              <ul className="pl-6 text-2xl space-y-1">
                 <li>Vercel</li>
-                <li>Render</li>
               </ul>
             </div>
           </div>
@@ -767,56 +727,13 @@ export default function PortfolioPage() {
 
           <div
             onClick={() => descriptionBoxRef5.current?.scrollTop()}
-            className="flex justify-center items-center  min-w-[80vw] bg-green-600 hover:bg-green-500 duration-300 font-bold text-8xl  hover:text-9xl  p-8 rounded-xl text-white snap-center cursor-pointer"
+            className="flex justify-center items-center  min-w-[80vw] bg-green-500 hover:bg-green-400 duration-300 font-bold text-8xl  hover:text-9xl  p-8 rounded-xl text-white snap-center cursor-pointer"
           >
             TOP
+            <PiArrowBendRightUpBold />
           </div>
         </DescriptionBox>
       </section>
     </main>
   );
 }
-
-// "use client"
-// HorizontalScroll.tsx
-// import { useEffect } from "react";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// export default function HorizontalScroll() {
-//   useEffect(() => {
-//     const sections = gsap.utils.toArray(".panel");
-
-//     gsap.to(sections, {
-//       xPercent: -100 * (sections.length - 1),
-//       ease: "none",
-//       scrollTrigger: {
-//         trigger: ".horizontal-wrapper",
-//         pin: true,
-//         scrub: 1,
-//         end: () => "+=" + window.innerWidth * sections.length,
-//       },
-//     });
-//   }, []);
-
-//   return (
-//     <div className="horizontal-wrapper h-screen overflow-hidden">
-//       <div className="flex w-[400vw] h-full">
-//         <section className="panel w-screen h-full flex items-center justify-center bg-red-300 text-5xl">
-//           1
-//         </section>
-//         <section className="panel w-screen h-full flex items-center justify-center bg-green-300 text-5xl">
-//           2
-//         </section>
-//         <section className="panel w-screen h-full flex items-center justify-center bg-blue-300 text-5xl">
-//           3
-//         </section>
-//         <section className="panel w-screen h-full flex items-center justify-center bg-yellow-300 text-5xl">
-//           4
-//         </section>
-//       </div>
-//     </div>
-//   );
-// }
