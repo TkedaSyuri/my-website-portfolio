@@ -5,12 +5,12 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import type { OrbitControls as ThreeOrbitControls } from "three-stdlib";
 import BornFire from "./BornFire/BornFire";
-import GrassPlane from "./GeoComponents/GrassPlane";
-import StonePlane from "./GeoComponents/StonePlane";
-import { Fireflies } from "./GeoComponents/Fireflies";
-import GeoTree from "./GeoComponents/GeoTree";
+import GrassPlane from "./ObjectComponents/GrassPlane";
+import StonePlane from "./ObjectComponents/StonePlane";
+import { Fireflies } from "./ObjectComponents/Fireflies";
+import GeoTree from "./ObjectComponents/GeoTree";
 import { FireSound } from "./BornFire/FireSound";
-import { ClicketSound } from "./GeoComponents/ClicketSound";
+import { ClicketSound } from "./ObjectComponents/ClicketSound";
 
 const SceneCanvas: React.FC = () => {
   const controlsRef = useRef<ThreeOrbitControls>(null!);
@@ -20,7 +20,7 @@ const SceneCanvas: React.FC = () => {
       <Canvas>
         <PerspectiveCamera
           makeDefault
-          position={[8, 6, 10]}
+          position={[6, 3, 4]}
           fov={60}
           near={0.1}
           far={1000}

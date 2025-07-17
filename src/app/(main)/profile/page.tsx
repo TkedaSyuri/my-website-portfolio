@@ -46,7 +46,7 @@ const Profile = () => {
         {/* スキル */}
         <div>
           <h2 className="text-2xl border-b mt-8 font-semibold  border-blue-600">
-            スキル
+            スキル <span className="text-sm">＊ポートフォリオまたは半年以上使用していた技術のみ掲載しています。</span>
           </h2>
           <div className="grid grid-cols-3 gap-2 ">
             <div className="mt-4 ">
@@ -54,8 +54,8 @@ const Profile = () => {
               <ul className="list-disc pl-6 mt-2 ">
                 <li>TypeScript</li>
                 <li>JavaScript</li>
-                <li>Ruby</li>
                 <li>Python</li>
+                <li>Ruby</li>
               </ul>
             </div>
 
@@ -119,15 +119,16 @@ const Profile = () => {
           </h2>
           <div>
             <ul className="list-disc pl-6">
-              <li className=" mt-5">ITパスポート</li>
+              <li className=" mt-5">ITパスポート 取得日: 2025年2月17日</li>
             </ul>
           </div>
           {/* AWS Certified */}
           <div>
-            <h2 className=" mt-4 font-semibold">AWS Certified</h2>
-            <div className="flex gap-5">
+            <h2 className="text-2xl mt-4 font-semibold">AWS Certified</h2>
+            <div className="mt-2 flex gap-5">
               <div>
                 <p>Solution Architect Associate</p>
+                <p>取得日: 2025年5月30日</p>
                 <div>
                   <div
                     data-iframe-width="150"
@@ -139,6 +140,7 @@ const Profile = () => {
               </div>
               <div>
                 <p>Cloud Practitioner</p>
+                <p>取得日: 2025年5月13日</p>
                 <div>
                   <div
                     data-iframe-width="150"

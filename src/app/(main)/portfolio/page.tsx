@@ -86,7 +86,6 @@ export default function PortfolioPage() {
               alt="ポートフォリオ"
             />
           </div>
-
           <div className="flex flex-col gap-10   min-w-[80vw] bg-green-400 p-8 rounded-xl text-black snap-center ">
             <div>
               <h2 className="text-4xl font-semibold  mb-4 border-b-2">概要</h2>
@@ -164,30 +163,52 @@ export default function PortfolioPage() {
           </div>
 
           <div className="min-w-[80vw] bg-green-600 p-8 rounded-xl snap-center">
-            <h2 className="text-4xl font-bold  mb-4 border-b-2">GitHub</h2>
-            <div className="flex flex-col gap-4 text-2xl">
-              <p className=" font-semibold">
-                <span>フロントエンド:</span>
-                <Link
-                  href="https://github.com/TkedaSyuri/grm-system"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-700 underline hover:text-blue-500 transition"
-                >
-                  https://github.com/TkedaSyuri/grm-system
-                </Link>
-              </p>
-              <p className="font-semibold">
-                <span>バックエンド:</span>
-                <Link
-                  href="https://github.com/TkedaSyuri/grm-system-server"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-700 underline hover:text-blue-500 transition"
-                >
-                  https://github.com/TkedaSyuri/grm-system-server
-                </Link>
-              </p>
+            <div>
+              <h2 className="text-4xl font-bold  mb-4 border-b-2">
+                サイトへのリンク
+              </h2>
+              <div className="flex flex-col gap-4 text-2xl">
+                <p className=" font-semibold">
+                  <span>URL: </span>
+                  <Link
+                    href="https://gest-room-moniter.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 underline hover:text-blue-500 transition"
+                  >
+                    https://gest-room-moniter.vercel.app/
+                  </Link>
+                </p>
+                <p>Renderの無料枠の制限上、起動直後のデータの取得に約1分ほど掛かることがあります。</p>
+              </div>
+            </div>
+
+            <div className="mt-40">
+              <h2 className="text-4xl font-bold  mb-4 border-b-2">GitHub</h2>
+              <div className="flex flex-col gap-4 text-2xl">
+                <p className=" font-semibold">
+                  <span>フロントエンド:</span>
+                  <Link
+                    href="https://github.com/TkedaSyuri/grm-system"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 underline hover:text-blue-500 transition"
+                  >
+                    https://github.com/TkedaSyuri/grm-system
+                  </Link>
+                </p>
+                <p className="font-semibold">
+                  <span>バックエンド:</span>
+                  <Link
+                    href="https://github.com/TkedaSyuri/grm-system-server"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 underline hover:text-blue-500 transition"
+                  >
+                    https://github.com/TkedaSyuri/grm-system-server
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
 
@@ -267,7 +288,7 @@ export default function PortfolioPage() {
                     <span>フレームワーク：</span>React Native
                   </li>
                   <li>
-                    <span>ライブラリ：</span>Jotai 
+                    <span>ライブラリ：</span>Jotai
                   </li>
                 </ul>
               </div>
@@ -300,7 +321,6 @@ export default function PortfolioPage() {
                 </h3>
                 <ul className="pl-6  space-y-1">
                   <li>Vercel / Render</li>
-                  
                 </ul>
               </div>
             </div>
@@ -659,7 +679,8 @@ export default function PortfolioPage() {
             <div>
               <h2 className="text-4xl font-semibold  mb-4 border-b-2">概要</h2>
               <p className="text-2xl ">
-                このサイトでは、自己紹介・ポートフォリオ・アーカイブ(学習記録)を閲覧できます。WebGL ライブラリの React Three Fiber
+                このサイトでは、自己紹介・ポートフォリオ・アーカイブ(学習記録)を閲覧できます。WebGL
+                ライブラリの React Three Fiber
                 やアニメーションライブラリのGSAPを用いて、ユーザー体験（UX）を意識した動きのあるUIを作成しました。
               </p>
             </div>
@@ -681,7 +702,7 @@ export default function PortfolioPage() {
                   Next.js
                 </li>
                 <li>
-                  <span>ライブラリ：</span>React Three Fiber / GSAP 
+                  <span>ライブラリ：</span>React Three Fiber / GSAP
                 </li>
               </ul>
             </div>
@@ -703,23 +724,12 @@ export default function PortfolioPage() {
               <p className="text-2xl font-semibold">
                 <span>フロントエンド:</span>
                 <Link
-                  href="https://github.com/TkedaSyuri/grm-system"
+                  href="https://github.com/TkedaSyuri/my-website"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 underline hover:text-blue-300 transition"
                 >
-                  https://github.com/TkedaSyuri/grm-system
-                </Link>
-              </p>
-              <p className="text-2xl font-semibold">
-                <span>バックエンド:</span>
-                <Link
-                  href="https://github.com/TkedaSyuri/grm-system-server"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 underline hover:text-blue-300 transition"
-                >
-                  https://github.com/TkedaSyuri/grm-system-server
+                 https://github.com/TkedaSyuri/my-website
                 </Link>
               </p>
             </div>

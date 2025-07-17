@@ -23,6 +23,7 @@ export const DescriptionBox = forwardRef<
   const containerRef = useRef<HTMLDivElement>(null);
 
   useImperativeHandle(ref, () => ({
+    
     scrollRight: () => {
       containerRef.current?.scrollBy({
         left: containerRef.current.clientWidth,
@@ -43,12 +44,21 @@ export const DescriptionBox = forwardRef<
       });
     },
     scrollTop: () => {
-      gsap.to(window, {
-        duration: 1.5,
-        scrollTo: { y: -window.scrollY + window.innerHeight },
-        ease: "smooth",
-      });
-    },
+      const tl = gsap.timeline();
+
+// 縦方向にスクロール（上へ）
+  tl.to(window, {
+    duration: 1.0,
+    scrollTo: { y: 0 },
+    ease: "power2.out",
+  });
+
+  // 横方向にスクロール（左へ）
+  tl.to(window, {
+    duration: 1.0,
+    scrollTo: { x: 0 },
+    ease: "power2.out",
+  });    },
   }));
 
   return (
