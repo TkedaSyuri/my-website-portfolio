@@ -78,14 +78,18 @@ export default function PortfolioPage() {
         </div>
 
         <DescriptionBox ref={descriptionBoxRef1}>
-          <div className=" flex justify-center items-center min-w-[90vw] bg-[url('/images/hotel_front.png')] bg-center bg-cover bg-no-repeat bg-green-500 p-8 rounded-xl text-white snap-center">
-            <Image
-              src={`/images/portfolio1.png`}
-              width={800}
-              height={800}
-              alt="ポートフォリオ"
-            />
+          <div className="relative flex justify-center items-center min-w-[90vw] p-8 rounded-xl snap-center overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/images/hotel_front.png')] bg-center bg-cover bg-no-repeat scale-110 z-0" />
+            <div className="relative z-10">
+              <Image
+                src="/images/portfolio1.png"
+                width={900}
+                height={900}
+                alt="ポートフォリオ"
+              />
+            </div>
           </div>
+
           <div className="flex flex-col gap-10   min-w-[80vw] bg-green-400 p-8 rounded-xl text-black snap-center ">
             <div>
               <h2 className="text-4xl font-semibold  mb-4 border-b-2">概要</h2>
@@ -179,7 +183,9 @@ export default function PortfolioPage() {
                     https://gest-room-moniter.vercel.app/
                   </Link>
                 </p>
-                <p>Renderの無料枠の制限上、起動直後のデータの取得に約1分ほど掛かることがあります。</p>
+                <p>
+                  Renderの無料枠の制限上、起動直後のデータの取得に約1分ほど掛かることがあります。
+                </p>
               </div>
             </div>
 
@@ -248,7 +254,7 @@ export default function PortfolioPage() {
           <div className="flex justify-center items-center min-w-[90vw] bg-[url('/images/hotel_room.png')] bg-center bg-cover bg-no-repeat bg-cyan-500 p-8 rounded-xl text-white snap-center">
             <Image
               src={`/images/portfolio2.png`}
-              width={300}
+              width={400}
               height={300}
               alt="ポートフォリオ"
             />
@@ -387,13 +393,16 @@ export default function PortfolioPage() {
         </div>
 
         <DescriptionBox ref={descriptionBoxRef3}>
-          <div className=" flex justify-center items-center min-w-[90vw] bg-[url('/images/hotel_room.png')] bg-center bg-cover bg-no-repeat  p-8 rounded-xl  snap-center">
-            <Image
-              src={`/images/blog.png`}
-              width={800}
-              height={800}
-              alt="ポートフォリオ"
-            />
+          <div className="relative flex justify-center items-center min-w-[90vw] p-8 rounded-xl snap-center overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/images/blog.png')] bg-center bg-cover bg-no-repeat blur-md scale-110 z-0" />
+            <div className="relative z-10">
+              <Image
+                src="/images/blog.png"
+                width={800}
+                height={800}
+                alt="ポートフォリオ"
+              />
+            </div>
           </div>
 
           <div className="flex flex-col  gap-8 min-w-[80vw] bg-red-500 p-8 rounded-xl text-white snap-center ">
@@ -540,7 +549,7 @@ export default function PortfolioPage() {
         <DescriptionBox ref={descriptionBoxRef4}>
           <div className=" flex justify-center items-center min-w-[90vw] bg-[url('/images/aws.png')] bg-center bg-cover bg-no-repeat p-8 rounded-xl snap-center">
             <Image
-              src={`/images/portfolio1.png`}
+              src={`/images/portfolio4.png`}
               width={800}
               height={800}
               alt="ポートフォリオ"
@@ -549,14 +558,13 @@ export default function PortfolioPage() {
 
           <div className="flex flex-col gap-2 justify-evenly min-w-[80vw] bg-pink-500 p-8 rounded-xl text-white snap-center ">
             <h2 className="text-4xl font-semibold border-b-2">概要</h2>
-            <div className="text-2xl flex flex-col gap-2">
+            <div className="text-2xl flex flex-col gap-3">
               <p>
-                CDK, API Gateway, Lambda, Code Build, Event Bridgeを用いて「AWS
-                ECS on Fargate でブログを構築」を自動で構築・削除します。
+                CDK, AWSリソース(API Gateway, Lambda, Code Build, Event
+                Bridge)を用いて「AWS ECS on Fargate
+                でブログを構築」を自動で構築・削除します。就活中に運用するAWSのコストを最適化する為に作成しました。
               </p>
-              <p>
-                就活中に運用するAWSのコストを最適化する為にChatGPTを用いて作成しました。
-              </p>
+              <p>CDK・LambdaのコーディングにはChatGPTを使用しています。</p>
               <p>
                 「武田珠里のホームページ(このサイト)」にアクセスしたタイミング、またはボタンを押すことで構築が始まり、構築が完了してから1時間後に自動で削除されます。
               </p>
@@ -666,23 +674,29 @@ export default function PortfolioPage() {
         </div>
 
         <DescriptionBox ref={descriptionBoxRef5}>
-          <div className=" flex justify-center items-center min-w-[90vw] bg-[url('/images/hotel_room.png')] bg-center bg-cover bg-no-repeat  p-8 rounded-xl  snap-center">
-            <Image
-              src={`/images/portfolio5.png`}
-              width={800}
-              height={800}
-              alt="ポートフォリオ"
-            />
+          <div className="relative flex justify-center items-center min-w-[90vw] p-8 rounded-xl snap-center overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/images/portfolio5.png')] bg-center bg-cover bg-no-repeat blur-md scale-110 z-0" />
+            <div className="relative z-10">
+              <Image
+                src="/images/portfolio5.png"
+                width={800}
+                height={800}
+                alt="ポートフォリオ"
+              />
+            </div>
           </div>
 
           <div className=" justify-evenly min-w-[80vw] bg-orange-400 p-8 rounded-xl text-white snap-center ">
             <div>
               <h2 className="text-4xl font-semibold  mb-4 border-b-2">概要</h2>
-              <p className="text-2xl ">
-                このサイトでは、自己紹介・ポートフォリオ・アーカイブ(学習記録)を閲覧できます。WebGL
-                ライブラリの React Three Fiber
-                やアニメーションライブラリのGSAPを用いて、ユーザー体験（UX）を意識した動きのあるUIを作成しました。
-              </p>
+              <div className="text-2xl ">
+                <p>
+                  このサイトでは、自己紹介・ポートフォリオ・アーカイブ(学習記録)を閲覧できます。WebGL
+                  ライブラリの React Three Fiber
+                  やアニメーションライブラリのGSAPを用いて、ユーザー体験（UX）を意識した動きのあるUIを作成しました。
+                </p>
+                <p>焚き火のオブジェクトの作成にはChatGPTを使用しています。</p>
+              </div>
             </div>
           </div>
           <div className="min-w-[80vw] bg-orange-500 p-8 rounded-xl text-white snap-center">
@@ -729,7 +743,7 @@ export default function PortfolioPage() {
                   rel="noopener noreferrer"
                   className="text-blue-500 underline hover:text-blue-300 transition"
                 >
-                 https://github.com/TkedaSyuri/my-website
+                  https://github.com/TkedaSyuri/my-website
                 </Link>
               </p>
             </div>
