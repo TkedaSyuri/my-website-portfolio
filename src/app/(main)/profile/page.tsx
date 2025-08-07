@@ -37,7 +37,7 @@ const Profile = () => {
               ものづくりの面白さを実感し、現在はNext.jsやTypeScriptを中心にWebアプリケーション開発に取り組んでいます。
             </p>
             <p>
-              最近はインフラ（AWS）や React Native に関心があり、これから
+              最近はインフラ（AWS、Linux等）や React Native に関心があり、これから
               AWS認定資格を 順次取得しつつ、React Native
               を用いたアプリ開発にも取り組んでいく予定です。
             </p>
@@ -46,8 +46,9 @@ const Profile = () => {
         {/* スキル */}
         <div>
           <h2 className="text-2xl border-b mt-8 font-semibold  border-blue-600">
-            スキル <span className="text-sm">＊ポートフォリオまたは半年以上使用していた技術のみ掲載しています。</span>
+            スキル 
           </h2>
+          <span className="text-sm">＊ポートフォリオまたは半年以上使用していた技術のみ掲載しています。</span>
           <div className="grid grid-cols-3 gap-2 ">
             <div className="mt-4 ">
               <h3 className=" font-semibold ">プログラミング言語</h3>
@@ -124,7 +125,7 @@ const Profile = () => {
           </div>
           {/* AWS Certified */}
           <div>
-            <h2 className="text-2xl mt-4 font-semibold">AWS Certified</h2>
+            <h2 className="text-xl mt-4 font-semibold">・・AWS Certified</h2>
             <div className="mt-2 flex gap-5">
               <div>
                 <p>Solution Architect Associate</p>
