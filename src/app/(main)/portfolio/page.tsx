@@ -12,7 +12,7 @@ import SlideButton from "@/app/components/SlideButton";
 import Image from "next/image";
 import Link from "next/link";
 import { PiArrowBendRightUpBold } from "react-icons/pi";
-import { startBuild } from "@/app/lib/api/startBuild";
+// import { startBuild } from "@/app/lib/api/startBuild";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function PortfolioPage() {
@@ -583,7 +583,7 @@ export default function PortfolioPage() {
 
           <div className="text-center">
             <button
-              onClick={() => confirmAlert()}
+              // onClick={() => confirmAlert()}
               className="font-semibold bg-green-500 hover:bg-green-600 duration-300 rounded-xl p-2 px-3"
             >
               起動する
