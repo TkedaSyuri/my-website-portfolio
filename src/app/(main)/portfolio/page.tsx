@@ -24,28 +24,28 @@ export default function PortfolioPage() {
   const descriptionBoxRef4 = useRef<DescriptionBoxHandle>(null);
   const descriptionBoxRef5 = useRef<DescriptionBoxHandle>(null);
 
-  const handleStartBuild = async () => {
-    try {
-      const data = await startBuild();
-      console.log(data.status);
-      if (data.status === "starting") {
-        setStatusMessage("構築中");
-      } else if (data.status === "running") {
-        setStatusMessage("構築完了");
-      } else {
-        console.log("不明なステータス:", data.status);
-      }
-    } catch (err) {
-      console.error("API call failed:", err);
-    }
-  };
+  // const handleStartBuild = async () => {
+  //   try {
+  //     const data = await startBuild();
+  //     console.log(data.status);
+  //     if (data.status === "starting") {
+  //       setStatusMessage("構築中");
+  //     } else if (data.status === "running") {
+  //       setStatusMessage("構築完了");
+  //     } else {
+  //       console.log("不明なステータス:", data.status);
+  //     }
+  //   } catch (err) {
+  //     console.error("API call failed:", err);
+  //   }
+  // };
 
-  const confirmAlert = () => {
-    const isConfirmed = window.confirm("起動しますか？");
-    if (isConfirmed) {
-      handleStartBuild();
-    }
-  };
+  // const confirmAlert = () => {
+  //   const isConfirmed = window.confirm("起動しますか？");
+  //   if (isConfirmed) {
+  //     handleStartBuild();
+  //   }
+  // };
 
   return (
     <main className="w-screen h-full  bg-black relative z-20">
