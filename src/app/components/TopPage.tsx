@@ -21,11 +21,11 @@ const TopPage = () => {
 
   return (
     <div className="left-0  pointer-events-none inline-block relative z-20">
-      <div className="text-5xl md:text-9xl font-bold  text-white  ">
+      <div className="text-6xl md:text-8xl font-bold  text-white  ">
         <h1>Takeda Syuri</h1>
       </div>
       <div>
-        <ul className="ml-4 mt-20 grid gap-6 text-3xl md:text-5xl font-semibold z-20 text-white  pointer-events-auto ">
+        <ul className="ml-4 mt-20 grid gap-6 text-4xl md:text-5xl font-semibold z-20 text-white  pointer-events-auto ">
           <Link
             href="profile "
             className="hover:text-orange-400 hover:scale-110 duration-500 z-20  w-fit"
