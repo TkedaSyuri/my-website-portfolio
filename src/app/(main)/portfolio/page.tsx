@@ -128,7 +128,7 @@ export default function PortfolioPage() {
                     Next.js
                   </li>
                   <li>
-                    <span>ライブラリ：</span>Redux / Zod / React  Hook Form
+                    <span>ライブラリ：</span>Redux / Socket.io / Zod / React Hook Form
                   </li>
                 </ul>
               </div>
