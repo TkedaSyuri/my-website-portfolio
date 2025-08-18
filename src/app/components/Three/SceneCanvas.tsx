@@ -11,6 +11,7 @@ import { Fireflies } from "./ObjectComponents/Fireflies";
 import GeoTree from "./ObjectComponents/GeoTree";
 import { FireSound } from "./BornFire/FireSound";
 import { ClicketSound } from "./ObjectComponents/ClicketSound";
+import { Preload } from '@react-three/drei'
 
 const SceneCanvas: React.FC = () => {
   const controlsRef = useRef<ThreeOrbitControls>(null!);
@@ -18,6 +19,7 @@ const SceneCanvas: React.FC = () => {
   return (
     <div className="w-full h-screen  absolute inset-0 z-10">
       <Canvas>
+        <Preload all />
         <PerspectiveCamera
           makeDefault
           position={[6, 3, 4]}
