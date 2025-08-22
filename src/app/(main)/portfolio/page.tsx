@@ -81,6 +81,7 @@ export default function PortfolioPage() {
                 height={900}
                 alt="ポートフォリオ"
                 className="w-full h-auto"
+                priority={true}
               />
             </div>
           </div>
@@ -264,6 +265,8 @@ export default function PortfolioPage() {
                 height={300}
                 alt="ポートフォリオ"
                 className="w-full h-auto"
+                priority={true}
+
               />
             </div>
           </div>
@@ -413,6 +416,7 @@ export default function PortfolioPage() {
           height={900}
           alt="ポートフォリオ"
           className="w-full h-auto"
+          priority={true}
         />
       </div>
     </div>
@@ -525,6 +529,7 @@ export default function PortfolioPage() {
           height={900}
           alt="ポートフォリオ"
           className="w-full h-auto"
+          priority={true}
         />
       </div>
     </div>
@@ -642,6 +647,7 @@ export default function PortfolioPage() {
           height={900}
           alt="ポートフォリオ"
           className="w-full h-auto"
+          priority={true}
         />
       </div>
     </div>
