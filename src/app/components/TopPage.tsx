@@ -27,19 +27,19 @@ const TopPage = () => {
       <div>
         <ul className="ml-4 mt-20 grid gap-6 text-4xl md:text-5xl font-semibold z-20 text-white  pointer-events-auto ">
           <Link
-            href="profile "
+            href="/profile "
             className="hover:text-orange-400 hover:scale-110 duration-500 z-20  w-fit"
           >
             プロフィール
           </Link>
           <Link
-            href="portfolio"
+            href="/portfolio"
             className="hover:text-orange-400 hover:scale-110 duration-500   z-20   w-fit"
           >
             ポートフォリオ
           </Link>
           <Link
-            href="record"
+            href="/archive"
             className="hover:text-orange-400 hover:scale-110 duration-500 z-20 w-fit"
           >
             アーカイブ
