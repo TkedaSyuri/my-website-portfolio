@@ -8,9 +8,6 @@ const Profile = () => {
         className="text-white max-w-6xl w-full p-8 rounded-2xl shadow-xl backdrop-blur-xs
         overflow-y-auto max-h-[80vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-500"
       >
-        <Link href="/" className="text-white">
-          戻る
-        </Link>
 
         {/* 自己紹介 */}
         <div>
