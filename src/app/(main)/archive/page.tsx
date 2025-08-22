@@ -77,7 +77,7 @@ const Data = [
   { id: 19, title: "DB", url: "https://github.com/TkedaSyuri/DB-practice" },
 ];
 
-const RecordPage = () => {
+const ArchivePage = () => {
   return (
       <div className="relative z-20 pt-10  overflow-y-auto max-h-[95vh] scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-300">
         {/* このページの説明 */}
@@ -112,4 +112,4 @@ const RecordPage = () => {
   );
 };
 
-export default RecordPage;
+export default ArchivePage;
