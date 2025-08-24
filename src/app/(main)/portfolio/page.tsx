@@ -463,7 +463,7 @@ export default function PortfolioPage() {
         <div>
           <h3 className="text-xl md:text-2xl font-semibold mb-2 underline underline-offset-2">インフラ・その他</h3>
           <ul className="pl-6 text-xl md:text-2xl space-y-1">
-            <li>Docker</li>
+            <li>AWS / Docker</li>
           </ul>
         </div>
       </div>
