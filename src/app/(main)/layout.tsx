@@ -1,18 +1,19 @@
 import { Metadata } from "next";
+import NavigationBar from "../components/NavigationBar";
 
 export const metadata: Metadata = {
   title: "Takeda Syuri",
   description: "This is Takeda Syuri Blog",
 };
 
-
- const ProfileLayout = ({
+const ProfileLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
   return (
-    <div >
+    <div>
+        <NavigationBar />
       {children}
     </div>
   );
