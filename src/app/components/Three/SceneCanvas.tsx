@@ -4,14 +4,14 @@ import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import type { OrbitControls as ThreeOrbitControls } from "three-stdlib";
-import BornFire from "./BornFire/BornFire";
-import GrassPlane from "./ObjectComponents/GrassPlane";
-import StonePlane from "./ObjectComponents/StonePlane";
-import { Fireflies } from "./ObjectComponents/Fireflies";
-import GeoTree from "./ObjectComponents/GeoTree";
-import { FireSound } from "./BornFire/FireSound";
-import { ClicketSound } from "./ObjectComponents/ClicketSound";
+import GrassPlane from "./Object/GrassPlane";
+import StonePlane from "./Object/StonePlane";
+import { Fireflies } from "./Object/Fireflies";
+import GeoTree from "./Object/GeoTree";
+import { ClicketSound } from "./Object/ClicketSound";
 import { Preload } from '@react-three/drei'
+import BornFire from "./Object/BornFire/BornFire";
+import { FireSound } from "./Object/BornFire/FireSound";
 
 const SceneCanvas: React.FC = () => {
   const controlsRef = useRef<ThreeOrbitControls>(null!);

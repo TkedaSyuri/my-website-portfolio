@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SceneCanvas from "./components/Three/SceneCanvas";
+import LoadingOverlay from "./components/Three/LoadingOverlay";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,11 +29,13 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable}   antialiased  relative w-full h-full `}
+        className={`${geistSans.variable} ${geistMono.variable} bg-black text-white  antialiased  relative w-full h-full `}
       >
+        
         <div className="bg-black  inset-0 z-10 pointer-events-none absolute ">
           <SceneCanvas />
         </div>
+         <LoadingOverlay />
         <div className="relative ">{children}</div>
       </body>
     </html>
