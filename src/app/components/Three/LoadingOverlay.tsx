@@ -19,7 +19,7 @@ export default function LoadingOverlay() {
       {/* 焚き火イラスト */}
       <motion.div
         animate={{
-          scale: [1, 1.05, 1], // ゆらゆらするアニメーション
+          scale: [1, 1.05, 1], // アニメーション
         }}
         transition={{
           repeat: Infinity,
@@ -32,7 +32,7 @@ export default function LoadingOverlay() {
         }}
       >
         <Image
-          src="/images/fire2.png"
+          src="/images/fire.png"
           alt="焚き火"
           width={200}
           height={200}
