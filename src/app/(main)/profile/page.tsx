@@ -122,7 +122,7 @@ const Profile = () => {
           </div>
           {/* AWS Certified */}
           <div>
-            <h2 className="text-xl mt-4 font-semibold">・・AWS Certified</h2>
+            <h2 className="text-xl mt-4 font-semibold">・AWS Certified</h2>
             <div className="mt-2 flex gap-5">
               <div>
                 <p>Solution Architect Associate</p>
