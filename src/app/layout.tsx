@@ -14,10 +14,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Takeda Syuri",
-  description: "My website",
+  title: "武田珠里 ホームページ",
+  description: "武田珠里のホームページです。",
+  keywords: ["武田珠里", "Takeda Syuri", "ポートフォリオ","ホームページ", "エンジニア", "クラウド", "フロントエンド"],
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "武田珠里 ホームページ",
+    description: "エンジニア 武田珠里のポートフォリオサイト。",
+    images:"https://my-website-omega-amber.vercel.app/fire.png",
+    url: "https://my-website-omega-amber.vercel.app/",
+    siteName: "武田珠里 ホームページ",
+    type: "website",
   },
 };
 
