@@ -46,8 +46,8 @@ const Profile = () => {
             スキル 
           </h2>
           <span className="text-sm">＊ポートフォリオまたは半年以上使用していた技術のみ掲載しています。</span>
-          <div className="grid grid-cols-3 gap-2 ">
-            <div className="mt-4 ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 ">
+            <div className="mt-4">
               <h3 className=" font-semibold ">プログラミング言語</h3>
               <ul className="list-disc pl-6 mt-2 ">
                 <li>TypeScript</li>
@@ -62,9 +62,9 @@ const Profile = () => {
               <ul className="list-disc pl-6 mt-2 ">
                 <li>React.js</li>
                 <li>Next.js</li>
+                <li>Express.js</li>
                 <li>React Native </li>
                 <li>Hono.js</li>
-                <li>Express.js</li>
                 <li>Ruby on Rails</li>
                 <li>Django</li>
               </ul>
