@@ -520,8 +520,9 @@ export default function PortfolioPage() {
   </div>
 
   <DescriptionBox ref={descriptionBoxRef4}>
+    {/* スライド1 - 画像 */}
     <div className="relative flex justify-center items-center min-w-[90vw] p-8 rounded-xl snap-center overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/images/aws.png')] bg-center bg-cover bg-no-repeat scale-110 z-0" />
+      <div className="absolute inset-0 bg-[url('/images/aws.png')] blur-sm md:blur-sm scale-110 opacity-90 bg-center bg-cover bg-no-repeat z-0" />
       <div className="relative z-10">
         <Image
           src="/images/portfolio4.png"
@@ -534,19 +535,21 @@ export default function PortfolioPage() {
       </div>
     </div>
 
-    <div className="flex flex-col gap-2 min-w-[80vw] bg-pink-500 p-8 rounded-xl text-black snap-center">
-      <p className="text-xl md:text-3xl font-semibold border-b-2 mb-4">概要</p>
-      <div className="text-base md:text-2xl flex flex-col gap-3">
-        <p>
-          CDK, AWSリソース(API Gateway, Lambda, Code Build, Event Bridge)を用いて「AWS ECS on Fargate
-          でブログを構築」を自動で構築・削除します。就活中に運用するAWSのコストを最適化する為に作成しました。
+    {/* スライド2 - 概要 */}
+    <div className="p-8 text-black flex flex-col min-w-[80vw] bg-pink-500 rounded-xl snap-center">
+      <div>
+        <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">概要</p>
+        <p className="text-base md:text-2xl">
+          CDK, AWSリソース(API Gateway, Lambda, Code Build, Event Bridge)を用いて「AWS ECS on
+          Fargateでブログを構築」を自動で構築・削除します。就活中に運用するAWSのコストを最適化する為に作成しました。
         </p>
-        <p>CDK・LambdaのコーディングにはChatGPTを使用しています。</p>
-        <p>
+        <p className="text-base md:text-2xl mt-4">
+          CDK・LambdaのコーディングにはChatGPTを使用しています。
+        </p>
+        <p className="text-base md:text-2xl mt-4">
           「武田珠里のホームページ(このサイト)」にアクセスしたタイミング、またはボタンを押すことで構築が始まり、構築が完了してから1時間後に自動で削除されます。
         </p>
       </div>
-
       <div className="mt-15">
         <h2 className="mb-4 text-xl md:text-3xl font-semibold border-b-2">インフラ構成</h2>
         <ul className="pl-6 text-base md:text-2xl list-disc">
@@ -559,49 +562,44 @@ export default function PortfolioPage() {
       </div>
     </div>
 
-    <div className="p-8 min-w-[80vw] bg-pink-600 rounded-xl text-black snap-center">
-      <div>
-        <h2 className="text-xl md:text-3xl font-semibold mb-4 border-b-2">サイトへのリンク</h2>
-        <div className="flex flex-col justify-around gap-5">
-          <div className="text-base md:text-2xl">
-            <p>
-              * URL上のステータスをご確認ください。構築が未完了の場合「未完了」、構築が完了している場合は「構築完了」と表示されます。未完了の場合「起動する」を押すと構築が始まります。構築に時間が約13分掛かります。
-            </p>
-          </div>
+    {/* スライド3 - サイトリンク */}
+    <div className="min-w-[80vw] bg-pink-600 p-8 rounded-xl text-black snap-center">
+      <h2 className="text-xl md:text-3xl font-semibold mb-4 border-b-2">サイトへのリンク</h2>
+      <div className="flex flex-col gap-5">
+        <p className="text-base md:text-2xl">
+          * URL上のステータスをご確認ください。構築が未完了の場合「未完了」、構築が完了している場合は「構築完了」と表示されます。
+          未完了の場合「起動する」を押すと構築が始まります。構築に時間が約13分掛かります。
+        </p>
 
-          <div className="text-base md:text-2xl">
-            <p>ステータス:{statusMessage}</p>
-          </div>
+        <p className="text-base md:text-2xl">ステータス:{statusMessage}</p>
 
-          <div className="text-base md:text-2xl">
-            <p className="flex gap-3">
-              <span>URL:</span>
-              <Link
-                href="https://blog.syuri-takeda.jp"
-                target="_blank" rel="noopener noreferrer"
-                className="text-blue-700 underline hover:text-blue-500 transition break-normal break-words"
-              >
-                https://blog.syuri-takeda.jp
-              </Link>
-            </p>
-          </div>
+        <p className="text-base md:text-2xl flex gap-3">
+          <span>URL:</span>
+          <Link
+            href="https://blog.syuri-takeda.jp"
+            target="_blank" rel="noopener noreferrer"
+            className="text-blue-700 underline hover:text-blue-500 transition break-normal break-words"
+          >
+            https://blog.syuri-takeda.jp
+          </Link>
+        </p>
 
-          <div className="text-center">
-            <button
-              // onClick={() => confirmAlert()}
-              className="font-semibold bg-green-500 hover:bg-green-600 duration-300 rounded-xl p-2 px-3"
-            >
-              起動する
-            </button>
-          </div>
+        <div className="text-center">
+          <button
+            // onClick={() => confirmAlert()}
+            className="font-semibold bg-green-500 hover:bg-green-600 duration-300 rounded-xl p-2 px-3"
+          >
+            起動する
+          </button>
         </div>
       </div>
     </div>
 
+    {/* スライド4 - GitHub */}
     <div className="min-w-[80vw] bg-pink-500 p-8 rounded-xl text-black snap-center">
       <h2 className="text-xl md:text-3xl font-bold mb-4 border-b-2">GitHub</h2>
       <div className="text-base md:text-2xl flex flex-col gap-4">
-        <p className="flex gap-3 font-semibold">
+        <p className="font-semibold break-words">
           <span>CDK: </span>
           <Link
             href="https://github.com/TkedaSyuri/my-blog-cdk"
@@ -614,6 +612,7 @@ export default function PortfolioPage() {
       </div>
     </div>
 
+    {/* スライド5 - Next */}
     <div
       onClick={() => descriptionBoxRef4.current?.scrollNext()}
       className="text-6xl md:text-8xl font-bold flex justify-center items-center min-w-[80vw] bg-orange-500 hover:bg-orange-400 duration-300 hover:text-9xl p-8 rounded-xl text-white snap-center cursor-pointer"
