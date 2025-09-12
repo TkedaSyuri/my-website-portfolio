@@ -114,10 +114,10 @@ export default function PortfolioPage() {
             <h2 className="mb-6 text-xl md:text-3xl font-semibold border-b-2">
               使用技術
             </h2>
-            <div className="text-2xl">
+            <div>
               {/* フロントエンド */}
               <div className="mb-8">
-                <h3 className="text-xl md:text-2xl font-semibold mb-2 underline underline-offset-4">
+                <h3 className="text-xl md:text-2xl  font-semibold mb-2 underline underline-offset-4">
                   フロントエンド
                 </h3>
                 <ul className="pl-6 text-base md:text-2xl space-y-1 ">
