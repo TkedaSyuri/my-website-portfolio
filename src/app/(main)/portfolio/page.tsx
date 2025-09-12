@@ -536,31 +536,32 @@ export default function PortfolioPage() {
     </div>
 
     {/* スライド2 - 概要 */}
-    <div className="p-8 text-black flex flex-col min-w-[80vw] bg-pink-500 rounded-xl snap-center">
-      <div>
-        <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">概要</p>
-        <p className="text-base md:text-2xl">
-          CDK, AWSリソース(API Gateway, Lambda, Code Build, Event Bridge)を用いて「AWS ECS on
-          Fargateでブログを構築」を自動で構築・削除します。就活中に運用するAWSのコストを最適化する為に作成しました。
-        </p>
-        <p className="text-base md:text-2xl mt-4">
-          CDK・LambdaのコーディングにはChatGPTを使用しています。
-        </p>
-        <p className="text-base md:text-2xl mt-4">
-          「武田珠里のホームページ(このサイト)」にアクセスしたタイミング、またはボタンを押すことで構築が始まり、構築が完了してから1時間後に自動で削除されます。
-        </p>
-      </div>
-      <div className="mt-15">
-        <h2 className="mb-4 text-xl md:text-3xl font-semibold border-b-2">インフラ構成</h2>
-        <ul className="pl-6 text-base md:text-2xl list-disc">
-          <li>IaC：CDK</li>
-          <li>API：API Gateway</li>
-          <li>関数実行：Lambda</li>
-          <li>ビルド：CodeBuild</li>
-          <li>自動削除トリガー：EventBridge</li>
-        </ul>
-      </div>
-    </div>
+{/* スライド2 - 概要 */}
+<div className="p-8 text-black flex flex-col min-w-[80vw] bg-pink-500 rounded-xl snap-center">
+  <div>
+    <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">概要d</p>
+    <p className="text-base md:text-2xl">
+      CDK, AWSリソース(API Gateway, Lambda, Code Build, Event Bridge)を用いて「AWS ECS on
+      Fargateでブログを構築」を自動で構築・削除します。就活中に運用するAWSのコストを最適化する為に作成しました。
+    </p>
+    <p className="text-base md:text-2xl mt-4">
+      CDK・LambdaのコーディングにはChatGPTを使用しています。
+    </p>
+    <p className="text-base md:text-2xl mt-4">
+      「武田珠里のホームページ(このサイト)」にアクセスしたタイミング、またはボタンを押すことで構築が始まり、構築が完了してから1時間後に自動で削除されます。
+    </p>
+  </div>
+  <div className="mt-15">
+    <h2 className="mb-4 text-xl md:text-3xl font-semibold border-b-2">インフラ構成</h2>
+    <ul className="pl-6 text-base md:text-2xl list-disc">
+      <li>IaC：CDK</li>
+      <li>API：API Gateway</li>
+      <li>関数実行：Lambda</li>
+      <li>ビルド：CodeBuild</li>
+      <li>自動削除トリガー：EventBridge</li>
+    </ul>
+  </div>
+</div>
 
     {/* スライド3 - サイトリンク */}
     <div className="min-w-[80vw] bg-pink-600 p-8 rounded-xl text-black snap-center">
