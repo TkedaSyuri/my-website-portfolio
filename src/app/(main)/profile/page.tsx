@@ -8,7 +8,6 @@ const Profile = () => {
         className="text-white max-w-6xl w-full p-8 rounded-2xl shadow-xl backdrop-blur-xs
         overflow-y-auto max-h-[80vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-500"
       >
-
         {/* 自己紹介 */}
         <div>
           <div className="font-semibold ">
@@ -34,8 +33,8 @@ const Profile = () => {
               ものづくりの面白さを実感し、現在はNext.jsやTypeScriptを中心にWebアプリケーション開発に取り組んでいます。
             </p>
             <p>
-              最近はインフラ（AWS、Linux等）や React Native に関心があり、これから
-              AWS認定資格を 順次取得しつつ、React Native
+              最近はインフラ（AWS、Linux等）や React Native
+              に関心があり、これから AWS認定資格を 順次取得しつつ、React Native
               を用いたアプリ開発にも取り組んでいく予定です。
             </p>
           </div>
@@ -43,9 +42,11 @@ const Profile = () => {
         {/* スキル */}
         <div>
           <h2 className="text-2xl border-b mt-8 font-semibold  border-blue-600">
-            スキル 
+            スキル
           </h2>
-          <span className="text-sm">＊ポートフォリオまたは半年以上使用していた技術のみ掲載しています。</span>
+          <span className="text-sm">
+            ＊ポートフォリオまたは半年以上使用していた技術のみ掲載しています。
+          </span>
           <div className="grid grid-cols-2 sm:grid-cols-3 ">
             <div className="mt-4">
               <h3 className=" font-semibold ">プログラミング言語</h3>
@@ -121,6 +122,17 @@ const Profile = () => {
             </ul>
           </div>
           {/* AWS Certified */}
+          <div
+            data-iframe-width="150"
+            data-iframe-height="270"
+            data-share-badge-id="687f8738-9105-4879-b8c9-fee55ef59e49"
+            data-share-badge-host="https://www.credly.com"
+          ></div>
+          <script
+            type="text/javascript"
+            async
+            src="//cdn.credly.com/assets/utilities/embed.js"
+          ></script>
           <div>
             <h2 className="text-xl mt-4 font-semibold">・AWS Certified</h2>
             <div className="mt-2 flex gap-5">
@@ -132,6 +144,18 @@ const Profile = () => {
                     data-iframe-width="150"
                     data-iframe-height="240"
                     data-share-badge-id="ac846df1-563d-4042-a44c-1e1ea684ce84"
+                    data-share-badge-host="https://www.credly.com"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <p>Solution Developper Associate</p>
+                <p>取得日: 2025年9月17日</p>
+                <div>
+                  <div
+                    data-iframe-width="150"
+                    data-iframe-height="270"
+                    data-share-badge-id="687f8738-9105-4879-b8c9-fee55ef59e49"
                     data-share-badge-host="https://www.credly.com"
                   ></div>
                 </div>
