@@ -122,17 +122,6 @@ const Profile = () => {
             </ul>
           </div>
           {/* AWS Certified */}
-          <div
-            data-iframe-width="150"
-            data-iframe-height="270"
-            data-share-badge-id="687f8738-9105-4879-b8c9-fee55ef59e49"
-            data-share-badge-host="https://www.credly.com"
-          ></div>
-          <script
-            type="text/javascript"
-            async
-            src="//cdn.credly.com/assets/utilities/embed.js"
-          ></script>
           <div>
             <h2 className="text-xl mt-4 font-semibold">・AWS Certified</h2>
             <div className="mt-2 flex gap-5">
