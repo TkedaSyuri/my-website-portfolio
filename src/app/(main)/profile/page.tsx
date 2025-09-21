@@ -124,7 +124,7 @@ const Profile = () => {
           {/* AWS Certified */}
           <div>
             <h2 className="text-xl mt-4 font-semibold">・AWS Certified</h2>
-            <div className="mt-2 flex gap-5">
+            <div className="mt-2 flex grid-cols-2 gap-5">
               <div>
                 <p>Solution Architect Associate</p>
                 <p>取得日: 2025年5月30日</p>
@@ -138,7 +138,7 @@ const Profile = () => {
                 </div>
               </div>
               <div>
-                <p>Solution Developper Associate</p>
+                <p>Solution Developer Associate</p>
                 <p>取得日: 2025年9月17日</p>
                 <div>
                   <div
