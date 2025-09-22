@@ -539,7 +539,7 @@ export default function PortfolioPage() {
 {/* スライド2 - 概要 */}
 <div className="p-8 text-black flex flex-col min-w-[80vw] bg-pink-500 rounded-xl snap-center">
   <div>
-    <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">概要d</p>
+    <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">概要</p>
     <p className="text-base md:text-2xl">
       CDK, AWSリソース(API Gateway, Lambda, Code Build, Event Bridge)を用いて「AWS ECS on
       Fargateでブログを構築」を自動で構築・削除します。就活中に運用するAWSのコストを最適化する為に作成しました。
