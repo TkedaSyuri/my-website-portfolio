@@ -78,6 +78,16 @@ const Data = [
     title: "GSAP",
     url: "https://github.com/TkedaSyuri/GSAP-practice",
   },
+  {
+    id: 16,
+    title: "CDK",
+    url: "https://github.com/TkedaSyuri/CDK-practice",
+  },
+  {
+    id: 17,
+    title: "AWS",
+    url: "https://github.com/TkedaSyuri/AWS-practice",
+  },
 ];
 
 const ArchivePage = () => {
