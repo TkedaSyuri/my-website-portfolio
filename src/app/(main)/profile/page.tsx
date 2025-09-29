@@ -1,3 +1,4 @@
+import AWSCertifedList from "@/app/components/AWSCertifedList";
 import Link from "next/link";
 import Script from "next/script";
 
@@ -124,44 +125,7 @@ const Profile = () => {
           {/* AWS Certified */}
           <div>
             <h2 className="text-xl mt-4 font-semibold">・AWS Certified</h2>
-            <div className="mt-2 flex grid-cols-2 gap-5">
-              <div>
-                <p>Solution Architect Associate</p>
-                <p>取得日: 2025年5月30日</p>
-                <div>
-                  <div
-                    data-iframe-width="150"
-                    data-iframe-height="240"
-                    data-share-badge-id="ac846df1-563d-4042-a44c-1e1ea684ce84"
-                    data-share-badge-host="https://www.credly.com"
-                  ></div>
-                </div>
-              </div>
-              <div>
-                <p>Solution Developer Associate</p>
-                <p>取得日: 2025年9月17日</p>
-                <div>
-                  <div
-                    data-iframe-width="150"
-                    data-iframe-height="270"
-                    data-share-badge-id="687f8738-9105-4879-b8c9-fee55ef59e49"
-                    data-share-badge-host="https://www.credly.com"
-                  ></div>
-                </div>
-              </div>
-              <div>
-                <p>Cloud Practitioner</p>
-                <p>取得日: 2025年5月13日</p>
-                <div>
-                  <div
-                    data-iframe-width="150"
-                    data-iframe-height="240"
-                    data-share-badge-id="6c0e98bb-c1e6-4117-ad97-1392efd2eada"
-                    data-share-badge-host="https://www.credly.com"
-                  ></div>
-                </div>
-              </div>
-            </div>
+              <AWSCertifedList/>
           </div>
           <Script
             type="text/javascript"
