@@ -542,13 +542,13 @@ export default function PortfolioPage() {
     <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">概要</p>
     <p className="text-base md:text-2xl">
       CDK, AWSリソース(API Gateway, Lambda, Code Build, Event Bridge)を用いて「AWS ECS on
-      Fargateでブログを構築」を自動で構築・削除します。就活中に運用するAWSのコストを最適化する為に作成しました。
+      Fargateでブログを構築」を自動で構築・削除します。就活中に運用する際の労力とコストを最適化する為に作成しました。
     </p>
     <p className="text-base md:text-2xl mt-4">
       CDK・LambdaのコーディングにはChatGPTを使用しています。
     </p>
     <p className="text-base md:text-2xl mt-4">
-      「武田珠里のホームページ(このサイト)」にアクセスしたタイミング、またはボタンを押すことで構築が始まり、構築が完了してから1時間後に自動で削除されます。
+      次のスライドの「起動する」ボタンを押すことで構築が始まり、構築が完了してから1時間後に自動で削除されます。
     </p>
   </div>
   <div className="mt-15">
@@ -568,7 +568,7 @@ export default function PortfolioPage() {
       <h2 className="text-xl md:text-3xl font-semibold mb-4 border-b-2">サイトへのリンク</h2>
       <div className="flex flex-col gap-5">
         <p className="text-base md:text-2xl">
-          * URL上のステータスをご確認ください。構築が未完了の場合「未完了」、構築が完了している場合は「構築完了」と表示されます。
+          * URL上のステータスをご確認ください。構築が未完了の場合「未完了」、構築が完了している場合は「完了」と表示されます。
           未完了の場合「起動する」を押すと構築が始まります。構築に時間が約13分掛かります。
         </p>
 
