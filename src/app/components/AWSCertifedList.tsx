@@ -35,9 +35,8 @@ const AWSCertifedList = () => {
         {Data.map((item) => (
           <div
             key={item.id}
-            className="flex text-center flex-col items-center justify-center space-y-2"
+            className="py-4 flex text-center flex-col items-center justify-center"
           >
-            <div className="text-center">
               <div>
                 <p className="font-semibold min-h-[3rem] flex items-center justify-center">
                   {item.title}
@@ -53,7 +52,6 @@ const AWSCertifedList = () => {
                 ></div>
               </div>
             </div>
-          </div>
         ))}
       </div>
     </>
