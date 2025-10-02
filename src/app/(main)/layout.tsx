@@ -13,7 +13,7 @@ const ProfileLayout = ({
 }>) => {
   return (
     <div>
-        <NavigationBar />
+      <NavigationBar />
       {children}
     </div>
   );
