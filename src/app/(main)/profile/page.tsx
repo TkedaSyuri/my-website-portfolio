@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div className="min-h-screen flex items-center justify-center relative z-20 ">
       <div
-        className="text-white max-w-6xl w-full p-8 rounded-2xl shadow-xl backdrop-blur-xs
+        className="text-white max-w-6xl w-full p-3  rounded-2xl shadow-xl backdrop-blur-xs
         overflow-y-auto max-h-[80vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-500"
       >
         {/* 自己紹介 */}
@@ -119,13 +119,17 @@ const Profile = () => {
           </h2>
           <div>
             <ul className="list-disc pl-6">
-              <li className=" mt-5">ITパスポート 取得日: 2025年2月17日</li>
+              <li className=" mt-5">
+                <div>
+                  <p className="text-xl mt-4 font-semibold">ITパスポート</p>
+                  <p className="text-sm">取得日: 2025年2月17日</p>
+                </div>
+              </li>
             </ul>
           </div>
           {/* AWS Certified */}
           <div>
-            <h2 className="text-xl mt-4 font-semibold">・AWS Certified</h2>
-              <AWSCertifedList/>
+            <AWSCertifedList />
           </div>
           <Script
             type="text/javascript"
