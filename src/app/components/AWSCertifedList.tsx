@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 
 const Data = [
   {
@@ -29,9 +28,9 @@ const Data = [
 
 const AWSCertifedList = () => {
   return (
-    <>
+    <div className="py-20">
       <h2 className="text-xl mt-4 font-semibold">・AWS Certified</h2>
-      <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-6">
+      <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-6">
         {Data.map((item) => (
           <div
             key={item.id}
@@ -54,7 +53,7 @@ const AWSCertifedList = () => {
             </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 export default AWSCertifedList;
