@@ -535,8 +535,6 @@ export default function PortfolioPage() {
       </div>
     </div>
 
-    {/* スライド2 - 概要 */}
-{/* スライド2 - 概要 */}
 <div className="p-8 text-black flex flex-col min-w-[80vw] bg-pink-500 rounded-xl snap-center">
   <div>
     <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">概要</p>
@@ -563,7 +561,6 @@ export default function PortfolioPage() {
   </div>
 </div>
 
-    {/* スライド3 - サイトリンク */}
     <div className="min-w-[80vw] bg-pink-600 p-8 rounded-xl text-black snap-center">
       <h2 className="text-xl md:text-3xl font-semibold mb-4 border-b-2">サイトへのリンク</h2>
       <div className="flex flex-col gap-5">
@@ -603,11 +600,11 @@ export default function PortfolioPage() {
         <p className="font-semibold break-words">
           <span>CDK: </span>
           <Link
-            href="https://github.com/TkedaSyuri/my-blog-cdk"
+            href="https://github.com/TkedaSyuri/my-blog-cdk-portfolio"
             target="_blank" rel="noopener noreferrer"
             className="text-blue-700 underline hover:text-blue-500 transition break-normal break-words"
           >
-            https://github.com/TkedaSyuri/my-blog-cdk
+            https://github.com/TkedaSyuri/my-blog-cdk-portfolio
           </Link>
         </p>
       </div>
