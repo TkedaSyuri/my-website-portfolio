@@ -20,7 +20,7 @@ const SlideButton: React.FC<SlideButtonProps> = ({ direction, textColor, targetR
   return (
     <button
       onClick={handleClick}
-      className={clsx("text-6xl hover:text-8xl duration-500", {
+      className={clsx("text-6xl hover:text-8xl duration-500 hidden sm:block", {
         "text-red-200": textColor === "red",
         "text-green-200": textColor === "green",
         "text-cyan-200": textColor === "cyan",
