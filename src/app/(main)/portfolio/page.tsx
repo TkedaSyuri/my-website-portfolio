@@ -255,7 +255,6 @@ export default function PortfolioPage() {
         </div>
 
         <DescriptionBox ref={descriptionBoxRef2}>
-          {/* 画像セクション：背景レイヤ＋画像（w-full h-auto） */}
           <div className="relative flex justify-center items-center min-w-[90vw] p-8 rounded-xl snap-center overflow-hidden">
             <div className="absolute inset-0 bg-[url('/images/hotel_room.png')] bg-center bg-cover bg-no-repeat scale-110 z-0" />
             <div className="relative z-10">
@@ -271,7 +270,6 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* 概要・機能（サイズ階層をポートフォリオ1に統一） */}
           <div className="p-8 text-black flex flex-col min-w-[80vw] bg-cyan-400 rounded-xl snap-center">
             <div>
               <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">
@@ -294,7 +292,6 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* 使用技術（見出し・リストの階層を統一） */}
           <div className="min-w-[80vw] bg-cyan-500 p-8 rounded-xl text-black snap-center">
             <h2 className="mb-6 text-xl md:text-3xl font-semibold border-b-2">
               使用技術
@@ -351,7 +348,6 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* GitHub（ポートフォリオ1の構成・クラスに合わせる） */}
           <div className="min-w-[80vw] bg-cyan-600 p-8 rounded-xl text-black snap-center">
             <h2 className="text-xl md:text-3xl font-bold mb-4 border-b-2">
               GitHub
@@ -382,7 +378,6 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* Next ボタン（サイズ・レイアウトを統一） */}
           <div
             onClick={() => descriptionBoxRef2.current?.scrollNext()}
             className="text-6xl md:text-8xl font-bold flex justify-center items-center min-w-[80vw] bg-red-500 hover:bg-red-400 duration-300 hover:text-9xl p-8 rounded-xl text-white snap-center cursor-pointer"
@@ -408,10 +403,10 @@ export default function PortfolioPage() {
 
   <DescriptionBox ref={descriptionBoxRef3}>
     <div className="relative flex justify-center items-center min-w-[90vw] p-8 rounded-xl snap-center overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/images/blog.png')] blur-sm md:blur-sm scale-110 opacity-90 bg-center bg-cover bg-no-repeat z-0" />
+      <div className="absolute inset-0 bg-[url('/images/aws-blog-diagram.png')] blur-sm md:blur-sm scale-110 opacity-90 bg-center bg-cover bg-no-repeat z-0" />
       <div className="relative z-10">
         <Image
-          src="/images/blog.png"
+          src="/images/portfolio3.png"
           width={900}
           height={900}
           alt="ポートフォリオ"
