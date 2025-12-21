@@ -1,13 +1,13 @@
 import AWSCertifedList from "@/app/components/AWSCertifedList";
 import Link from "next/link";
-import Script from "next/script";
+import { ActiveTimeline } from "../../components/ActiveTimeline";
 
 const Profile = () => {
   return (
     <div className="min-h-screen flex items-center justify-center relative z-20 ">
       <div
-        className="text-white max-w-6xl w-full p-3  rounded-2xl shadow-xl backdrop-blur-xs
-        overflow-y-auto max-h-[80vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-500"
+        className="text-white  w-full p-3  rounded-2xl shadow-xl backdrop-blur-xs
+        overflow-y-auto max-h-[80vh] max-w-[180vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-500"
       >
         {/* 自己紹介 */}
         <div>
@@ -21,22 +21,22 @@ const Profile = () => {
             </div>
             <div className="flex mt-1">
               <p>学歴：</p>
-              <p>九州産業大学 経済学部経済学科 卒業</p>
+              <p>九州産業大学 経済学部経済学科 2023年 卒業</p>
             </div>
           </div>
 
           <div className="font-semibold mt-8  space-y-4">
             <h2 className="text-2xl border-b border-blue-600">自己紹介</h2>
             <p>
-              大学１年生の時、他大学のプログラミングサークルに参加したことをきっかけにプログラミングをはじめました。
-              <br /> そこでは合宿やハッカソンを通じて、HTML / CSS / JavaScript /
+              大学1年の春休みに他大学のプログラミングサークルに参加したことをきっかけにプログラミングをはじめました。
+               そこでは合宿やハッカソンを通じて、HTML / CSS / JavaScript /
               Reactを学びました。
-              ものづくりの面白さを実感し、現在はNext.jsやTypeScriptを中心にWebアプリケーション開発に取り組んでいます。
             </p>
+            <p>大学3年ではプログラミングを取り扱ったゼミに参加し、主にPythonを用いてExcelの自動化やスクレイピング、Djangoを学びました。</p>
             <p>
               最近はインフラ（AWS、Linux等）や React Native
-              に関心があり、これから AWS認定資格を 順次取得しつつ、React Native
-              を用いたアプリ開発にも取り組んでいく予定です。
+              に関心があり、AWS認定資格(AWS DOP,Advanced Networking)やLinuC levle1を取得することを目標に勉強しつつ、React Native
+              を用いたアプリ開発に取り組んでいく予定です。
             </p>
           </div>
         </div>
@@ -86,7 +86,6 @@ const Profile = () => {
                 <li>AWS</li>
                 <li>Docker</li>
                 <li>Vercel</li>
-                <li>Render</li>
               </ul>
             </div>
 
@@ -96,9 +95,7 @@ const Profile = () => {
                 <li>Redux</li>
                 <li>Jotai</li>
                 <li>Prisma</li>
-                <li>Drizzle ORM</li>
                 <li>Three.js</li>
-                <li>React Three Fiber</li>
               </ul>
             </div>
 
@@ -127,23 +124,27 @@ const Profile = () => {
               </li>
             </ul>
           </div>
+
           {/* AWS Certified */}
           <div>
             <AWSCertifedList />
           </div>
-          <Script
-            type="text/javascript"
-            async
-            src="//cdn.credly.com/assets/utilities/embed.js"
-          />
         </div>
 
+        {/* 活動 */}
+        <div>
+          <h2 className="text-2xl font-bold border-b border-blue-600">卒業後 2023〜2025年の活動記録</h2>
+
+          <ActiveTimeline />
+        </div>
+
+        {/* 情報 */}
         <div className="mt-6 grid  gap-2space-x-4">
           <h2 className="text-2xl font-semibold border-b mt-8  border-blue-600">
             情報
           </h2>
 
-          <div className="flex">
+          <div className="flex ">
             <p>Git Hub：</p>
             <Link
               href="https://github.com/TkedaSyuri"

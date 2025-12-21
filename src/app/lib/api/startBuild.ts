@@ -1,4 +1,3 @@
-
 //ブログを構築するapi
 
 export const startBuild = async () => {

@@ -16,12 +16,14 @@ import SlideButton from "@/app/components/SlideButton";
 import { PiArrowBendRightUpBold } from "react-icons/pi";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-// import { startBuild } from "@/app/lib/api/startBuild";
+import { startBuild } from "@/app/lib/api/startBuild";
+
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function PortfolioPage() {
   const [statusMessage, setStatusMessage] = useState<string | null>("未完了");
+  
 
   const descriptionBoxRef1 = useRef<DescriptionBoxHandle>(null);
   const descriptionBoxRef2 = useRef<DescriptionBoxHandle>(null);
@@ -29,28 +31,27 @@ export default function PortfolioPage() {
   const descriptionBoxRef4 = useRef<DescriptionBoxHandle>(null);
   const descriptionBoxRef5 = useRef<DescriptionBoxHandle>(null);
 
-  // const handleStartBuild = async () => {
-  //   try {
-  //     const data = await startBuild();
-  //     console.log(data.status);
-  //     if (data.status === "starting") {
-  //       setStatusMessage("構築中");
-  //     } else if (data.status === "running") {
-  //       setStatusMessage("構築完了");
-  //     } else {
-  //       console.log("不明なステータス:", data.status);
-  //     }
-  //   } catch (err) {
-  //     console.error("API call failed:", err);
-  //   }
-  // };
+  const handleStartBuild = async () => {
+    try {
+      const data = await startBuild();
+      if (data.status === "starting") {
+        setStatusMessage("構築中");
+      } else if (data.status === "running") {
+        setStatusMessage("構築完了");
+      } else {
+        console.log("不明なステータス:", data.status);
+      }
+    } catch (err) {
+      console.error("API call failed:", err);
+    }
+  };
 
-  // const confirmAlert = () => {
-  //   const isConfirmed = window.confirm("起動しますか？");
-  //   if (isConfirmed) {
-  //     handleStartBuild();
-  //   }
-  // };
+  const confirmAlert = () => {
+    const isConfirmed = window.confirm("起動しますか？");
+    if (isConfirmed) {
+      handleStartBuild();
+    }
+  };
 
   return (
     <main className="w-screen h-full  bg-black relative z-20">
@@ -135,7 +136,7 @@ export default function PortfolioPage() {
                   </li>
                   <li>
                     <span>ライブラリ：</span>Redux / Socket.io / Zod / React
-                    Hook Form
+                    Hook Form / Redis
                   </li>
                 </ul>
               </div>
@@ -601,7 +602,7 @@ export default function PortfolioPage() {
       {/* ポートフォリオ4 */}
       <section className="relative h-screen bg-cover bg-center flex flex-col justify-center items-center">
         <h2 className="font-bold text-white text-xl sm:text-4xl mb-4">
-          CDK × AWSリソース で「AWS ECS on Fargate
+          CDK × AWSサービス で「AWS ECS on Fargate
           でブログを構築」を一括構築・削除
         </h2>
 
@@ -643,7 +644,7 @@ export default function PortfolioPage() {
                 概要
               </p>
               <p className="text-base md:text-2xl">
-                CDK, AWSリソース(API Gateway, Lambda, Code Build, Event
+                CDK, AWSサービス(API Gateway, Lambda, Code Build, Event
                 Bridge)を用いて「AWS ECS on
                 Fargateでブログを構築」を自動で構築・削除します。就活中に運用する際の労力とコストを最適化する為に作成しました。
               </p>
@@ -697,7 +698,7 @@ export default function PortfolioPage() {
 
               <div className="text-center">
                 <button
-                  // onClick={() => confirmAlert()}
+                  onClick={() => confirmAlert()}
                   className="font-semibold bg-green-500 hover:bg-green-600 duration-300 rounded-xl p-2 px-3"
                 >
                   起動する
