@@ -431,7 +431,7 @@ export default function PortfolioPage() {
       {/* ポートフォリオ3 */}
       <section className="relative h-screen bg-cover bg-center flex flex-col justify-center items-center">
         <h2 className="font-bold text-white  text-xl sm:text-4xl mb-4">
-          AWS ECS on Fargate でブログを構築
+          AWS ECS on Fargate でブログ環境を構築
         </h2>
 
         {/* スライドボタン */}
@@ -472,7 +472,7 @@ export default function PortfolioPage() {
               </p>
               <p className="text-base md:text-2xl">
                 AWS ECS on
-                Fargateを活用してサーバーレスなアーキテクチャで、簡易的なブログを構築しました。
+                Fargateを活用してサーバーレスなアーキテクチャで、簡易的なブログ環境を構築しました。
               </p>
             </div>
             <div className="mt-15">
@@ -503,14 +503,16 @@ export default function PortfolioPage() {
                 AWS 構成図
               </p>
             </div>
-            <Image
-              src="/images/aws-blog-diagram.png"
-              width={900}
-              height={900}
-              alt="aws 構成図"
-              className="w-full h-auto"
-              priority={true}
-            />
+            <div className="flex justify-center">
+              <Image
+                src="/images/aws-blog-diagram.png"
+                width={700}
+                height={600}
+                alt="aws 構成図"
+                priority
+                className="rounded-lg shadow-lg h-auto"
+              />
+            </div>
           </div>
 
           <div className="min-w-[80vw] bg-red-600 p-8 rounded-xl text-black snap-center">
@@ -563,7 +565,7 @@ export default function PortfolioPage() {
             </h2>
             <div className="text-base md:text-2xl flex flex-col gap-4">
               <h3 className="text-xl md:text-2xl font-semibold underline underline-offset-4">
-                ブログのリソース
+                ブログのコード
               </h3>
               <p className="font-semibold break-words">
                 <span>フロントエンド: </span>
