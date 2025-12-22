@@ -19,7 +19,7 @@ export default function LoadingOverlay() {
       {/* 焚き火イラスト */}
       <motion.div
         animate={{
-          scale: [1, 1.05, 1], // アニメーション
+          scale: [1, 1.05, 1], 
         }}
         transition={{
           repeat: Infinity,
