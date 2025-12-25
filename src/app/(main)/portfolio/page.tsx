@@ -869,6 +869,28 @@ export default function PortfolioPage() {
               />
             </div>
           </div>
+                    <div className="min-w-[80vw] bg-orange-400 p-8 rounded-xl text-black snap-center">
+            <h2 className="text-xl md:text-3xl font-bold mb-4 border-b-2">
+              GitHub
+            </h2>
+            <div className="text-base md:text-2xl flex flex-col gap-4">
+              <h3 className="text-xl md:text-2xl font-semibold underline underline-offset-4">
+                ブログのコード
+              </h3>
+              <p className="font-semibold break-words">
+                <span>ホームページ ポートフォリオ用: </span>
+                <Link
+                  href="https://github.com/TkedaSyuri/my-website-portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-700 underline hover:text-blue-500 transition break-normal break-words"
+                >
+                  https://github.com/TkedaSyuri/my-website-portfolio
+                </Link>
+              </p>
+            </div>
+          </div>
+
 
           <div
             onClick={() => descriptionBoxRef5.current?.scrollTop()}
