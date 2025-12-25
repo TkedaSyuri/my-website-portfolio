@@ -14,16 +14,12 @@ import {
 
 import SlideButton from "@/app/components/SlideButton";
 import { PiArrowBendRightUpBold } from "react-icons/pi";
-import { FaExternalLinkAlt } from "react-icons/fa";
-
 import { startBuild } from "@/app/lib/api/startBuild";
-
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function PortfolioPage() {
   const [statusMessage, setStatusMessage] = useState<string | null>("未完了");
-  
 
   const descriptionBoxRef1 = useRef<DescriptionBoxHandle>(null);
   const descriptionBoxRef2 = useRef<DescriptionBoxHandle>(null);
@@ -78,21 +74,24 @@ export default function PortfolioPage() {
         </div>
 
         <DescriptionBox ref={descriptionBoxRef1}>
-          <div className="relative flex justify-center items-center min-w-[90vw] p-8 rounded-xl snap-center overflow-hidden">
-            <div className="absolute inset-0 bg-[url('/images/hotel_front.png')] bg-center bg-cover bg-no-repeat scale-110 z-0" />
-            <div className="relative z-10">
+          <div className="relative flex justify-center items-center min-w-[90vw] p-4 md:p-8 rounded-xl snap-center overflow-hidden">
+            <div
+              className="absolute inset-0 bg-[url('/images/hotel_front.png')] bg-center bg-cover bg-no-repeat scale-110 z-0"
+              aria-hidden="true"
+            />
+
+            <div className="relative z-10 w-full max-w-[90%] md:max-w-[80%] h-full flex justify-center items-center">
               <Image
                 src="/images/portfolio1.png"
                 width={900}
                 height={900}
                 alt="ポートフォリオ"
-                className="w-full h-auto"
+                className="w-full h-auto max-h-full"
                 priority={true}
               />
             </div>
           </div>
-
-          <div className=" p-8  text-black  flex flex-col min-w-[80vw] bg-green-400 rounded-xl snap-center ">
+          <div className=" p-8  text-black  flex flex-col min-w-[80vw] bg-green-500 rounded-xl snap-center ">
             <div>
               <p className="text-xl md:text-3xl font-semibold  mb-4 border-b-2 ">
                 概要
@@ -113,6 +112,7 @@ export default function PortfolioPage() {
                 </li>
                 <li>フロントスタッフと清掃員の相互連絡</li>
                 <li>認証機能</li>
+                <li>売り上げ確認ボード (開発中)</li>
               </ul>
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function PortfolioPage() {
                   </li>
                   <li>
                     <span>ライブラリ：</span>Redux / Socket.io / Zod / React
-                    Hook Form / Redis
+                    Hook Form
                   </li>
                 </ul>
               </div>
@@ -155,7 +155,7 @@ export default function PortfolioPage() {
                     Express.js
                   </li>
                   <li>
-                    <span>ライブラリ：</span>Prisma ORM
+                    <span>ライブラリ：</span>Prisma ORM / Redis
                   </li>
                   <li>
                     <span>データベース：</span>Supabase
@@ -176,7 +176,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="min-w-[80vw] bg-green-600 p-8 rounded-xl snap-center">
+          <div className="min-w-[80vw] bg-green-500 p-8 rounded-xl snap-center">
             <div>
               <h2 className="text-xl md:text-3xl font-bold  mb-4 border-b-2">
                 サイトへのリンク
@@ -262,21 +262,24 @@ export default function PortfolioPage() {
         </div>
 
         <DescriptionBox ref={descriptionBoxRef2}>
-          <div className="relative flex justify-center items-center min-w-[90vw] p-8 rounded-xl snap-center overflow-hidden">
-            <div className="absolute inset-0 bg-[url('/images/hotel_room.png')] bg-center bg-cover bg-no-repeat scale-110 z-0" />
-            <div className="relative z-10">
+          <div className="relative flex justify-center items-center min-w-[90vw] p-4 md:p-12 rounded-xl snap-center overflow-hidden ">
+            <div
+              className="absolute inset-0 bg-[url('/images/hotel_room.png')] bg-center bg-cover bg-no-repeat scale-110 z-0"
+              aria-hidden="true"
+            />
+
+            <div className="relative z-10 w-full max-w-[280px] md:max-w-[400px] h-full flex justify-center items-center">
               <Image
                 src="/images/portfolio2.png"
-                width={300}
-                height={300}
+                width={400}
+                height={800}
                 alt="ポートフォリオ"
-                className="w-full h-auto"
+                className="w-full h-auto max-h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 priority={true}
               />
             </div>
           </div>
-
-          <div className="p-8 text-black flex flex-col min-w-[80vw] bg-cyan-400 rounded-xl snap-center">
+          <div className="p-8 text-black flex flex-col min-w-[80vw] bg-cyan-500 rounded-xl snap-center">
             <div>
               <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">
                 概要
@@ -334,7 +337,7 @@ export default function PortfolioPage() {
                     <span>フレームワーク：</span>Hono.js
                   </li>
                   <li>
-                    <span>ライブラリ：</span>Drizzle ORM
+                    <span>ライブラリ：</span>Drizzle ORM / Redis
                   </li>
                   <li>
                     <span>データベース：</span>Supabase
@@ -354,7 +357,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="min-w-[80vw] flex flex-col justify-around text-black bg-cyan-600 p-8 rounded-xl  snap-center ">
+          <div className="min-w-[80vw] flex flex-col justify-around text-black bg-cyan-500 p-8 rounded-xl  snap-center ">
             <div>
               <h2 className="text-xl md:text-3xl font-bold mb-4 border-b-2">
                 GitHub
@@ -384,36 +387,38 @@ export default function PortfolioPage() {
                 </p>
               </div>
             </div>
+            {/* QR */}
             <div className="font-bold  ">
               <h2 className="text-xl md:text-3xl mb-4 border-b-2">EAS</h2>
-              <div className="">
-                <div className="text-base md:text-2xl flex items-center ">
+
+              <div className="grid gap-5">
+                <p className="font-md text-xl">
+                  EXPO GO からアプリの挙動を確認できます。
+                </p>
+                <div className="flex justify-center">
                   <div>
-                    <Link
-                      href="https://expo.dev/preview/update?message=preview&updateRuntimeVersion=1.0.0&createdAt=2025-10-22T14%3A23%3A34.488Z&slug=exp&projectId=08fc4b7e-ad95-421f-87fa-4dd0826e75b3&group=4cd70742-026e-44a8-8864-2793ae5f55e9"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-700 underline hover:text-blue-500 transition"
-                    >
-                      <FaExternalLinkAlt />
-                    </Link>
+                    <p className=" text-base md:text-xl">アプリのQRコード</p>
+                    <Image
+                      src="/images/app-qr.png"
+                      width={300}
+                      height={300}
+                      alt="App QR"
+                      priority={true}
+                    />
                   </div>
-                  <p className="text-sm md:text-2xl">
-                    Renderの無料枠の制限上、起動直後のデータの取得に約1分ほど掛かることがあります。
-                  </p>
                 </div>
-                <div>
-                  <p className=" text-base md:text-2xl">アプリのQRコード</p>
-                  <p className="font-sm text-sm">
-                    EXPO GO からアプリの挙動を確認できます。
-                  </p>
-                  <Image
-                    src="/images/app-qr.png"
-                    width={300}
-                    height={300}
-                    alt="App QR"
-                    priority={true}
-                  />
+                <p className="text-sm md:text-xl">
+                  ※Renderの無料枠の制限上、起動直後のデータの取得に約1分ほど掛かることがあります。
+                </p>
+                <div className="flex ">
+                  <Link
+                    href="https://expo.dev/preview/update?message=preview&updateRuntimeVersion=1.0.0&createdAt=2025-10-22T14%3A23%3A34.488Z&slug=exp&projectId=08fc4b7e-ad95-421f-87fa-4dd0826e75b3&group=4cd70742-026e-44a8-8864-2793ae5f55e9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 underline hover:text-blue-500 transition"
+                  >
+                    <p>QRコード 予備リンク</p>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -421,7 +426,7 @@ export default function PortfolioPage() {
 
           <div
             onClick={() => descriptionBoxRef2.current?.scrollNext()}
-            className="text-6xl md:text-8xl font-bold flex justify-center items-center min-w-[80vw] bg-red-500 hover:bg-red-400 duration-300 hover:text-9xl p-8 rounded-xl text-white snap-center cursor-pointer"
+            className="text-6xl md:text-8xl font-bold flex justify-center items-center min-w-[80vw] bg-red-600 hover:bg-red-500 duration-300 hover:text-9xl p-8 rounded-xl text-white snap-center cursor-pointer"
           >
             Next→
           </div>
@@ -452,7 +457,7 @@ export default function PortfolioPage() {
 
         <DescriptionBox ref={descriptionBoxRef3}>
           <div className="relative flex justify-center items-center min-w-[90vw] p-8 rounded-xl snap-center overflow-hidden">
-            <div className="absolute inset-0 bg-[url('/images/aws-blog-diagram.png')] blur-sm md:blur-sm scale-110 opacity-90 bg-center bg-cover bg-no-repeat z-0" />
+            <div className="absolute inset-0 bg-[url('/images/bg.png')] blur-sm md:blur-sm scale-110 opacity-90 bg-center bg-cover bg-no-repeat z-0" />
             <div className="relative z-10">
               <Image
                 src="/images/portfolio3.png"
@@ -465,7 +470,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="p-8 text-black flex flex-col min-w-[80vw] bg-red-500 rounded-xl snap-center">
+          <div className="p-8 text-black flex flex-col min-w-[80vw] bg-red-600 rounded-xl snap-center">
             <div>
               <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">
                 概要
@@ -481,23 +486,30 @@ export default function PortfolioPage() {
               </h2>
               <ul className="pl-6 text-base md:text-2xl list-disc">
                 <li>
-                  ECS (Fargate):フロントエンド/バックエンドをそれぞれ Fargate
+                  ECS (Fargate): フロントエンド、バックエンドをそれぞれ Fargate
                   サービスで構築。
                 </li>
+                <li>Route 53 + ACM: 独自ドメインによるHTTPS通信。</li>
+                <li> ALB: ロードバランサーによる負荷分散</li>
+                <li>RDS for PostgreSQL</li>
                 <li>
-                  ALB + Route 53 + ACM: HTTPS
-                  対応のロードバランサを用いて独自ドメインで運用。
+                  RDS Proxy: データベースへの接続負荷を軽減し、接続効率を向上。
                 </li>
                 <li>
-                  RDS (PostgreSQL):SSM Parameter Store で安全に認証情報を管理。
+                  VPC エンドポイント: インターネットを経由せずに ECR、SSM
+                  Parameter Store、S3と接続。
                 </li>
-                <li>ECR + VPC エンドポイント：ECR からのイメージ取得。</li>
-                <li>CloudWatch Logs:各コンテナのログを取得。</li>
+                <li>
+                  Systems Manager Parameter Store:
+                  フロントエンドの認証情報を管理
+                </li>
+                <li>Secrets Manager: RDSの機密情報を安全に一元管理。</li>
+                <li>CloudWatch Logs: 各コンテナのログを集約して取得。</li>
               </ul>
             </div>
           </div>
 
-          <div className="p-8 text-black flex flex-col justify-around min-w-[80vw] bg-red-500 rounded-xl snap-center">
+          <div className="p-8 text-black flex flex-col justify-around min-w-[80vw] bg-red-600 rounded-xl snap-center">
             <div>
               <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">
                 AWS 構成図
@@ -553,13 +565,13 @@ export default function PortfolioPage() {
                   インフラ・その他
                 </h3>
                 <ul className="pl-6 text-xl md:text-2xl space-y-1">
-                  <li>AWS / Docker</li>
+                  <li>Docker</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div className="min-w-[80vw] bg-red-700 p-8 rounded-xl text-black snap-center">
+          <div className="min-w-[80vw] bg-red-600 p-8 rounded-xl text-black snap-center">
             <h2 className="text-xl md:text-3xl font-bold mb-4 border-b-2">
               GitHub
             </h2>
@@ -594,7 +606,7 @@ export default function PortfolioPage() {
 
           <div
             onClick={() => descriptionBoxRef3.current?.scrollNext()}
-            className="text-6xl md:text-8xl font-bold flex justify-center items-center min-w-[80vw] bg-pink-500 hover:bg-pink-400 duration-300 hover:text-9xl p-8 rounded-xl text-white snap-center cursor-pointer"
+            className="text-6xl md:text-8xl font-bold flex justify-center items-center min-w-[80vw] bg-pink-600 hover:bg-pink-500 duration-300 hover:text-9xl p-8 rounded-xl text-white snap-center cursor-pointer"
           >
             Next→
           </div>
@@ -603,9 +615,9 @@ export default function PortfolioPage() {
 
       {/* ポートフォリオ4 */}
       <section className="relative h-screen bg-cover bg-center flex flex-col justify-center items-center">
-        <h2 className="font-bold text-white text-xl sm:text-4xl mb-4">
+        <h2 className="font-bold text-white text-xl sm:text-3xl mb-4">
           CDK × AWSサービス で「AWS ECS on Fargate
-          でブログを構築」を一括構築・削除
+          でブログ環境を構築」を一括構築・削除
         </h2>
 
         {/* スライドボタン */}
@@ -625,12 +637,12 @@ export default function PortfolioPage() {
         </div>
 
         <DescriptionBox ref={descriptionBoxRef4}>
-          {/* スライド1 - 画像 */}
           <div className="relative flex justify-center items-center min-w-[90vw] p-8 rounded-xl snap-center overflow-hidden">
-            <div className="absolute inset-0 bg-[url('/images/aws.png')] blur-sm md:blur-sm scale-110 opacity-90 bg-center bg-cover bg-no-repeat z-0" />
+            <div className="absolute inset-0 bg-[url('/images/portfolio4-v3.png')] blur-sm md:blur-sm scale-110 opacity-90 bg-center bg-cover bg-no-repeat z-0" />
+
             <div className="relative z-10">
               <Image
-                src="/images/portfolio4.png"
+                src="/images/portfolio4-v3.png"
                 width={900}
                 height={900}
                 alt="ポートフォリオ"
@@ -640,7 +652,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="p-8 text-black flex flex-col min-w-[80vw] bg-pink-500 rounded-xl snap-center">
+          <div className="p-8 text-black flex flex-col min-w-[80vw] bg-pink-600 rounded-xl snap-center">
             <div>
               <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">
                 概要
@@ -649,12 +661,6 @@ export default function PortfolioPage() {
                 CDK, AWSサービス(API Gateway, Lambda, Code Build, Event
                 Bridge)を用いて「AWS ECS on
                 Fargateでブログを構築」を自動で構築・削除します。就活中に運用する際の労力とコストを最適化する為に作成しました。
-              </p>
-              <p className="text-base md:text-2xl mt-4">
-                CDK・LambdaのコーディングにはChatGPTを使用しています。
-              </p>
-              <p className="text-base md:text-2xl mt-4">
-                次のスライドの「起動する」ボタンを押すことで構築が始まり、構築が完了してから1時間後に自動で削除されます。
               </p>
             </div>
             <div className="mt-15">
@@ -669,8 +675,26 @@ export default function PortfolioPage() {
                 <li>自動削除トリガー：EventBridge</li>
               </ul>
             </div>
+            {/* AWS構成図 */}
           </div>
-
+          <div className="p-8 text-black flex flex-col justify-around min-w-[80vw] bg-pink-600 rounded-xl snap-center">
+            <div>
+              <p className="text-xl md:text-2xl font-semibold mb-4 border-b-2">
+                AWS 構成図
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/images/aws-blog-cdk.png"
+                width={700}
+                height={600}
+                alt="aws 構成図"
+                priority
+                className="rounded-lg shadow-lg h-auto"
+              />
+            </div>
+          </div>
+          {/* サイトへのリンク */}
           <div className="min-w-[80vw] bg-pink-600 p-8 rounded-xl text-black snap-center">
             <h2 className="text-xl md:text-3xl font-semibold mb-4 border-b-2">
               サイトへのリンク
@@ -709,8 +733,8 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* スライド4 - GitHub */}
-          <div className="min-w-[80vw] bg-pink-500 p-8 rounded-xl text-black snap-center">
+          {/*  GitHub */}
+          <div className="min-w-[80vw] bg-pink-600 p-8 rounded-xl text-black snap-center">
             <h2 className="text-xl md:text-3xl font-bold mb-4 border-b-2">
               GitHub
             </h2>
@@ -742,7 +766,7 @@ export default function PortfolioPage() {
       {/* ポートフォリオ5 */}
       <section className="relative h-screen bg-cover bg-center  flex flex-col justify-center items-center">
         <h2 className="font-bold text-white text-xl sm:text-4xl mb-4">
-          武田珠里　ホームページ
+          武田珠里　ホームページ (S3 × CloudFront)
         </h2>
 
         {/* スライドボタン */}
@@ -781,10 +805,14 @@ export default function PortfolioPage() {
               <h2 className="text-xl md:text-3xl font-semibold mb-4 border-b-2">
                 概要
               </h2>
-              <div className="text-base md:text-2xl">
+              <div className="text-base md:text-2xl grid gap-2">
                 <p>
-                  このサイトでは、自己紹介・ポートフォリオ・アーカイブ(学習記録)を閲覧できます。WebGL
-                  ライブラリの React Three Fiber
+                  AWS S3 /
+                  CloudFrontを用いて今後運用していくホームページを作成しました。
+                </p>
+                <p>
+                  このサイトでは、自己紹介・ポートフォリオ・アーカイブ(学習記録)を閲覧できます。
+                  WebGLライブラリの React Three Fiber
                   やアニメーションライブラリのGSAPを用いて、ユーザー体験（UX）を意識した動きのあるUIを作成しました。
                 </p>
                 <p>焚き火のオブジェクトの作成にはChatGPTを使用しています。</p>
@@ -792,7 +820,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="min-w-[80vw] bg-orange-500 p-8 rounded-xl text-black snap-center">
+          <div className="min-w-[80vw] bg-orange-400 p-8 rounded-xl text-black snap-center">
             <h2 className="mb-6 text-xl md:text-3xl font-semibold border-b-2">
               使用技術
             </h2>
@@ -819,27 +847,26 @@ export default function PortfolioPage() {
                 インフラ・その他
               </h3>
               <ul className="pl-6 text-xl md:text-2xl space-y-1">
-                <li>Vercel</li>
+                <li>AWS (S3 / CloudFront / Route53 / Certificate Manager)</li>
               </ul>
             </div>
           </div>
 
-          <div className="min-w-[80vw] bg-orange-600 p-8 rounded-xl text-black snap-center">
-            <h2 className="text-xl md:text-3xl font-bold mb-4 border-b-2">
-              GitHub
-            </h2>
-            <div className="text-base md:text-2xl flex flex-col gap-4">
-              <p className="font-semibold">
-                <span>フロントエンド: </span>
-                <Link
-                  href="https://github.com/TkedaSyuri/my-website"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-700 underline hover:text-blue-500 transition break-normal break-words"
-                >
-                  https://github.com/TkedaSyuri/my-website
-                </Link>
+          <div className="p-8 text-black flex flex-col justify-around min-w-[80vw] bg-orange-400 rounded-xl snap-center">
+            <div>
+              <p className="text-xl md:text-2xl font-semibold mb-4 border-b-2">
+                AWS 構成図
               </p>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/images/aws-my-website.png"
+                width={700}
+                height={600}
+                alt="aws 構成図"
+                priority
+                className="rounded-lg shadow-lg h-auto"
+              />
             </div>
           </div>
 
