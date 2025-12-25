@@ -517,7 +517,7 @@ export default function PortfolioPage() {
             </div>
             <div className="flex justify-center">
               <Image
-                src="/images/aws-blog-diagram.png"
+                src="/images/aws-blog.png"
                 width={700}
                 height={600}
                 alt="aws 構成図"
