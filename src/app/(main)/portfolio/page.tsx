@@ -480,7 +480,9 @@ export default function PortfolioPage() {
                 Fargateを活用してサーバーレスなアーキテクチャで、簡易的なブログ環境を構築しました。
               </p>
             </div>
-            <div className="mt-15">
+          </div>
+          <div className="p-8 text-black flex flex-col min-w-[80vw] bg-red-600 rounded-xl snap-center">
+            <div>
               <h2 className="mb-4 text-xl md:text-3xl font-semibold border-b-2">
                 インフラ構成
               </h2>
@@ -509,17 +511,17 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="p-8 text-black flex flex-col justify-around min-w-[80vw] bg-red-600 rounded-xl snap-center">
+          <div className="p-8 text-black min-w-[80vw] bg-red-600 rounded-xl snap-center">
             <div>
               <p className="text-xl md:text-3xl font-semibold mb-4 border-b-2">
                 AWS 構成図
               </p>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center pt-10">
               <Image
                 src="/images/aws-blog.png"
-                width={700}
-                height={600}
+                width={900}
+                height={900}
                 alt="aws 構成図"
                 priority
                 className="rounded-lg shadow-lg h-auto"
@@ -677,17 +679,17 @@ export default function PortfolioPage() {
             </div>
             {/* AWS構成図 */}
           </div>
-          <div className="p-8 text-black flex flex-col justify-around min-w-[80vw] bg-pink-600 rounded-xl snap-center">
+          <div className="p-8 text-black  min-w-[80vw] bg-pink-600 rounded-xl snap-center">
             <div>
               <p className="text-xl md:text-2xl font-semibold mb-4 border-b-2">
                 AWS 構成図
               </p>
             </div>
-            <div className="flex justify-center">
+            <div className="pt-10 flex justify-center">
               <Image
                 src="/images/aws-blog-cdk.png"
-                width={700}
-                height={600}
+                width={900}
+                height={900}
                 alt="aws 構成図"
                 priority
                 className="rounded-lg shadow-lg h-auto"
@@ -701,15 +703,22 @@ export default function PortfolioPage() {
             </h2>
             <div className="flex flex-col gap-5">
               <p className="text-base md:text-2xl">
-                *
-                URL上のステータスをご確認ください。構築が未完了の場合「未完了」、構築が完了している場合は「完了」と表示されます。
-                未完了の場合「起動する」を押すと構築が始まります。構築に時間が約13分掛かります。
+                起動ボタンを押すと構築が開始されます。
+                *構築に時間が約13分掛かります。
               </p>
 
-              <p className="text-base md:text-2xl">
+              {/* <p className="text-base md:text-2xl">
                 ステータス:{statusMessage}
-              </p>
+              </p> */}
 
+              <div>
+                <button
+                  onClick={() => confirmAlert()}
+                  className="text-2xl font-semibold bg-green-500 hover:bg-green-600 duration-300 rounded-xl p-2 px-3"
+                >
+                  起動する
+                </button>
+              </div>
               <p className="text-base md:text-2xl flex gap-3">
                 <span>URL:</span>
                 <Link
@@ -721,15 +730,6 @@ export default function PortfolioPage() {
                   https://blog.syuri-takeda.jp
                 </Link>
               </p>
-
-              <div className="text-center">
-                <button
-                  onClick={() => confirmAlert()}
-                  className="font-semibold bg-green-500 hover:bg-green-600 duration-300 rounded-xl p-2 px-3"
-                >
-                  起動する
-                </button>
-              </div>
             </div>
           </div>
 
@@ -861,36 +861,52 @@ export default function PortfolioPage() {
             <div className="flex justify-center">
               <Image
                 src="/images/aws-my-website.png"
-                width={700}
-                height={600}
+                width={900}
+                height={900}
                 alt="aws 構成図"
                 priority
                 className="rounded-lg shadow-lg h-auto"
               />
             </div>
           </div>
-                    <div className="min-w-[80vw] bg-orange-400 p-8 rounded-xl text-black snap-center">
-            <h2 className="text-xl md:text-3xl font-bold mb-4 border-b-2">
-              GitHub
-            </h2>
-            <div className="text-base md:text-2xl flex flex-col gap-4">
-              <h3 className="text-xl md:text-2xl font-semibold underline underline-offset-4">
-                ブログのコード
-              </h3>
-              <p className="font-semibold break-words">
-                <span>ホームページ ポートフォリオ用: </span>
-                <Link
-                  href="https://github.com/TkedaSyuri/my-website-portfolio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-700 underline hover:text-blue-500 transition break-normal break-words"
-                >
-                  https://github.com/TkedaSyuri/my-website-portfolio
-                </Link>
-              </p>
+          <div className="min-w-[80vw] flex flex-col bg-orange-400 p-8 rounded-xl text-black snap-center">
+            <div>
+              <h2 className="text-xl md:text-3xl font-bold  mb-4 border-b-2">
+                サイトへのリンク
+              </h2>
+              <div className="flex flex-col gap-4">
+                <p className="text-base md:text-2xl font-semibold">
+                  <span>武田珠里 ホームページへのリンク: </span>
+                  <Link
+                    href="https://syuri-takeda.jp/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700  underline hover:text-blue-500 transition"
+                  >
+                    https://syuri-takeda.jp
+                  </Link>
+                </p>
+              </div>
+            </div>
+            <div>
+              <h2 className="pt-15 text-xl md:text-3xl font-bold mb-4 border-b-2">
+                GitHub
+              </h2>
+              <div className="text-base md:text-2xl flex flex-col gap-4">
+                <p className="font-semibold break-words">
+                  <span>ホームページ ポートフォリオ用: </span>
+                  <Link
+                    href="https://github.com/TkedaSyuri/my-website-portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 underline hover:text-blue-500 transition break-normal break-words"
+                  >
+                    https://github.com/TkedaSyuri/my-website-portfolio
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
-
 
           <div
             onClick={() => descriptionBoxRef5.current?.scrollTop()}
