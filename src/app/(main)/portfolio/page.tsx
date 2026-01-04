@@ -520,8 +520,8 @@ export default function PortfolioPage() {
             <div className="flex justify-center pt-10">
               <Image
                 src="/images/aws-blog.png"
-                width={900}
-                height={900}
+                width={700}
+                height={700}
                 alt="aws 構成図"
                 priority
                 className="rounded-lg shadow-lg h-auto"
@@ -688,11 +688,11 @@ export default function PortfolioPage() {
             <div className="pt-10 flex justify-center">
               <Image
                 src="/images/aws-blog-cdk.png"
-                width={900}
-                height={900}
+                width={800}
+                height={800}
                 alt="aws 構成図"
                 priority
-                className="rounded-lg shadow-lg h-auto"
+                className="rounded-lg shadow-lg w-full max-w-[600px] h-auto p-1 bg-white"
               />
             </div>
           </div>
@@ -861,8 +861,8 @@ export default function PortfolioPage() {
             <div className="flex justify-center">
               <Image
                 src="/images/aws-my-website.png"
-                width={900}
-                height={900}
+                width={700}
+                height={700}
                 alt="aws 構成図"
                 priority
                 className="rounded-lg shadow-lg h-auto"
