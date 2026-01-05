@@ -33,12 +33,10 @@ export default function PortfolioPage() {
   const handleStartBuild = async () => {
     try {
       const data = await startBuild();
-      if (data.status === "starting") {
-        setStatusMessage("構築中");
-      } else if (data.status === "running") {
-        setStatusMessage("構築完了");
-      } else {
-        console.log("不明なステータス:", data.status);
+      if (data.status === "starting" || data.status === "running") {
+        setStatusMessage("完了");
+      } else if (data.status === "complete") {
+         setStatusMessage("完了");
       }
     } catch (err) {
       console.error("API call failed:", err);
