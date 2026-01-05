@@ -36,7 +36,9 @@ export default function PortfolioPage() {
       if (data.status === "starting" || data.status === "running") {
         setStatusMessage("構築中");
       } else if (data.status === "complete") {
-        setStatusMessage("構築中");
+        setStatusMessage("完了");
+      }else if (data.status === "deleting"){
+        setStatusMessage("削除中");
       }
     } catch (err) {
       console.error("API call failed:", err);
@@ -704,10 +706,9 @@ export default function PortfolioPage() {
             </h2>
             <div className="flex flex-col gap-5">
               <p className="text-base md:text-2xl">
-                起動ボタンを押すと構築が開始されます。起動ボタンを押すと数秒でステータスが変わり、起動しているかどうかが確認できます。すでに完了していても構築中と表示されますので一度URLからブログをご確認ください。。
+                起動ボタンを押すと構築が開始されます。起動ボタンを押すと数秒でステータスが更新され、『構築中』『完了』『削除中』のいずれかが表示されます。削除中は再構築されないので終了まで少々お待ちください。
               </p>
-              <p>                *構築に時間が約13分掛かります。
-</p>
+              <p className="text-xl"> *構築に時間が約20分掛かります。</p>
 
               <div>
                 <button
@@ -729,6 +730,7 @@ export default function PortfolioPage() {
                     <TfiReload />
                   </button>
                 </div> */}
+                
               </div>
               <p className="text-base md:text-2xl flex gap-3">
                 <span>URL:</span>
