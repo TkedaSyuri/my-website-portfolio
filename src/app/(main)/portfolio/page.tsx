@@ -34,7 +34,7 @@ export default function PortfolioPage() {
     try {
       const data = await startBuild();
       if (data.status === "starting" || data.status === "running") {
-        setStatusMessage("完了");
+        setStatusMessage("構築中");
       } else if (data.status === "complete") {
          setStatusMessage("完了");
       }
