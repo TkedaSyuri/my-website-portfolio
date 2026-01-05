@@ -16,6 +16,9 @@ import SlideButton from "@/app/components/SlideButton";
 import { PiArrowBendRightUpBold } from "react-icons/pi";
 import { startBuild } from "@/app/lib/api/startBuild";
 
+import { TfiReload } from "react-icons/tfi";
+import { checkBuildStatus } from "@/app/lib/api/checkBuildStatus";
+
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function PortfolioPage() {
@@ -707,10 +710,10 @@ export default function PortfolioPage() {
                 *構築に時間が約13分掛かります。
               </p>
 
-              {/* <p className="text-base md:text-2xl">
+              <p className="text-base md:text-2xl">
                 ステータス:{statusMessage}
-              </p> */}
-
+              </p>
+ 
               <div>
                 <button
                   onClick={() => confirmAlert()}
@@ -718,6 +721,15 @@ export default function PortfolioPage() {
                 >
                   起動する
                 </button>
+                {/* <div>
+                  <p>ステータス：</p>
+                  <button
+                    onClick={() => checkBuildStatus()}
+                    className="text-2xl font-semibold bg-green-500 hover:bg-green-600 duration-300 rounded-xl p-2 px-3"
+                  >
+                    <TfiReload />
+                  </button>
+                </div> */}
               </div>
               <p className="text-base md:text-2xl flex gap-3">
                 <span>URL:</span>
