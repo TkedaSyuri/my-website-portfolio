@@ -17,7 +17,7 @@ import { PiArrowBendRightUpBold } from "react-icons/pi";
 import { startBuild } from "@/app/lib/api/startBuild";
 
 import { TfiReload } from "react-icons/tfi";
-import { checkBuildStatus } from "@/app/lib/api/checkBuildStatus";
+// import { checkBuildStatus } from "@/app/lib/api/checkBuildStatus";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
