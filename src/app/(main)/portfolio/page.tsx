@@ -704,7 +704,7 @@ export default function PortfolioPage() {
             </h2>
             <div className="flex flex-col gap-5">
               <p className="text-base md:text-2xl">
-                起動ボタンを押すと構築が開始されます。起動ボタンを押すと数秒でステータスが変わり構築状況が確認できます。
+                起動ボタンを押すと構築が開始されます。起動ボタンを押すと数秒でステータスが変わり構築状況が確認できます。完了であればURLからブログへアクセスできます。
                 *構築に時間が約13分掛かります。
               </p>
 
