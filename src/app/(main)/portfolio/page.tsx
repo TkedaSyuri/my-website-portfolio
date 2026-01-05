@@ -36,7 +36,7 @@ export default function PortfolioPage() {
       if (data.status === "starting" || data.status === "running") {
         setStatusMessage("構築中");
       } else if (data.status === "complete") {
-         setStatusMessage("完了");
+        setStatusMessage("完了");
       }
     } catch (err) {
       console.error("API call failed:", err);
@@ -704,21 +704,21 @@ export default function PortfolioPage() {
             </h2>
             <div className="flex flex-col gap-5">
               <p className="text-base md:text-2xl">
-                起動ボタンを押すと構築が開始されます。
+                起動ボタンを押すと構築が開始されます。起動ボタンを押すと数秒でステータスが変わり構築状況が確認できます。
                 *構築に時間が約13分掛かります。
               </p>
 
-              <p className="text-base md:text-2xl">
-                ステータス:{statusMessage}
-              </p>
- 
               <div>
                 <button
                   onClick={() => confirmAlert()}
-                  className="text-2xl font-semibold bg-green-500 hover:bg-green-600 duration-300 rounded-xl p-2 px-3"
+                  className="text-2xl  bg-green-500 hover:bg-green-300 duration-300 rounded-sm p-1 px-3"
                 >
-                  起動する
+                  起動
                 </button>
+                <p className="text-base md:text-2xl mt-2">
+                  ステータス:{statusMessage}
+                </p>
+
                 {/* <div>
                   <p>ステータス：</p>
                   <button
