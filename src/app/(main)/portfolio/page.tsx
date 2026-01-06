@@ -16,7 +16,7 @@ import SlideButton from "@/app/components/SlideButton";
 import { PiArrowBendRightUpBold } from "react-icons/pi";
 import { startBuild } from "@/app/lib/api/startBuild";
 
-import { TfiReload } from "react-icons/tfi";
+import { TbReload } from "react-icons/tb";
 // import { checkBuildStatus } from "@/app/lib/api/checkBuildStatus";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -37,7 +37,7 @@ export default function PortfolioPage() {
         setStatusMessage("構築中");
       } else if (data.status === "complete") {
         setStatusMessage("完了");
-      }else if (data.status === "deleting"){
+      } else if (data.status === "deleting") {
         setStatusMessage("削除中");
       }
     } catch (err) {
@@ -51,6 +51,22 @@ export default function PortfolioPage() {
       handleStartBuild();
     }
   };
+//仮のステータスチェック関数
+  const checkStatus = async ()=>{
+        try {
+      const data = await startBuild();
+      if (data.status === "starting" || data.status === "running") {
+        setStatusMessage("構築中");
+      } else if (data.status === "complete") {
+        setStatusMessage("完了");
+      } else if (data.status === "deleting") {
+        setStatusMessage("削除中");
+      }
+    } catch (err) {
+      console.error("API call failed:", err);
+    }
+
+  }
 
   return (
     <main className="w-screen h-full  bg-black relative z-20">
@@ -712,15 +728,25 @@ export default function PortfolioPage() {
 
               <div>
                 <button
-                  onClick={() => confirmAlert()}
+                  onClick={confirmAlert}
                   className="text-2xl  bg-green-500 hover:bg-green-300 duration-300 rounded-sm p-1 px-3"
                 >
                   起動
                 </button>
-                <p className="text-base md:text-2xl mt-2">
-                  ステータス:{statusMessage}
-                </p>
+                <div className="flex items-center gap-x-3">
+                  <p className="text-base md:text-2xl font-medium ">
+                    ステータス:
+                    <span className="">{statusMessage}</span>
+                  </p>
 
+                  <button
+                    className="text-3xl text-green-500 hover:scale-125  "
+                    onClick={checkStatus}
+                    title="リロード"
+                  >
+                    <TbReload />
+                  </button>
+                </div>{" "}
                 {/* <div>
                   <p>ステータス：</p>
                   <button
@@ -730,7 +756,6 @@ export default function PortfolioPage() {
                     <TfiReload />
                   </button>
                 </div> */}
-                
               </div>
               <p className="text-base md:text-2xl flex gap-3">
                 <span>URL:</span>
