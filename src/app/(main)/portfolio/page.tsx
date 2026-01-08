@@ -23,6 +23,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function PortfolioPage() {
   const [statusMessage, setStatusMessage] = useState<string | null>("未完了");
+  const [isLoading, setIsLoading] = useState(false);
 
   const descriptionBoxRef1 = useRef<DescriptionBoxHandle>(null);
   const descriptionBoxRef2 = useRef<DescriptionBoxHandle>(null);
@@ -51,9 +52,11 @@ export default function PortfolioPage() {
       handleStartBuild();
     }
   };
-//仮のステータスチェック関数
-  const checkStatus = async ()=>{
-        try {
+  //仮のステータスチェック関数
+  const checkStatus = async () => {
+    setIsLoading(true);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       const data = await startBuild();
       if (data.status === "starting" || data.status === "running") {
         setStatusMessage("構築中");
@@ -64,9 +67,10 @@ export default function PortfolioPage() {
       }
     } catch (err) {
       console.error("API call failed:", err);
+    }finally {
+      setIsLoading(false);
     }
-
-  }
+  };
 
   return (
     <main className="w-screen h-full  bg-black relative z-20">
@@ -724,6 +728,9 @@ export default function PortfolioPage() {
               <p className="text-base md:text-2xl">
                 起動ボタンを押すと構築が開始されます。起動ボタンを押すと数秒でステータスが更新され、『構築中』『完了』『削除中』のいずれかが表示されます。削除中は再構築されないので終了まで少々お待ちください。
               </p>
+              <p className="text-base md:text-2xl">
+                構築が完了しても自動でステータスは更新されないため、右手にあるリロードで随時更新してご確認ください。
+              </p>
               <p className="text-xl"> *構築に時間が約20分掛かります。</p>
 
               <div>
@@ -736,17 +743,18 @@ export default function PortfolioPage() {
                 <div className="flex items-center gap-x-3">
                   <p className="text-base md:text-2xl font-medium ">
                     ステータス:
-                    <span className="">{statusMessage}</span>
+                    <span>{statusMessage}</span>
                   </p>
 
                   <button
-                    className="text-3xl text-green-500 hover:scale-125  "
+                    className="text-3xl text-green-500 transition-transform duration-200 hover:scale-125 active:scale-95 disabled:opacity-50 disabled:hover:scale-100"
                     onClick={checkStatus}
                     title="リロード"
+                    disabled={isLoading}
                   >
-                    <TbReload />
+                    <TbReload className={isLoading ? "animate-spin" : ""} />
                   </button>
-                </div>{" "}
+                </div>
                 {/* <div>
                   <p>ステータス：</p>
                   <button
