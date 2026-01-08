@@ -731,7 +731,7 @@ export default function PortfolioPage() {
               <p className="text-base md:text-2xl">
                 構築が完了しても自動でステータスは更新されないため、右手にあるリロードで随時更新してご確認ください。
               </p>
-              <p className="text-xl"> *構築に時間が約20分掛かります。</p>
+              <p className="text-xl"> *構築に時間が約15分掛かります。</p>
 
               <div>
                 <button
