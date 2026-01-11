@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
+//CodeBuildを実行するapi
 export async function POST(req: NextRequest) {
   try {
     const res = await fetch(process.env.EXCUTE_API_URL!, {
