@@ -1,5 +1,6 @@
-//ブログを構築するapi
 
+
+//CodeBuildを実行するapi
 export const startBuild = async () => {
   try {
     const res = await fetch("/api/start-build", {
