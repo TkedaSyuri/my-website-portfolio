@@ -17,7 +17,7 @@ import { PiArrowBendRightUpBold } from "react-icons/pi";
 import { startBuild } from "@/app/lib/api/startBuild";
 
 import { TbReload } from "react-icons/tb";
-// import { checkBuildStatus } from "@/app/lib/api/checkBuildStatus";
+import { checkBuildStatus } from "@/app/lib/api/checkBuildStatus";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -53,21 +53,27 @@ export default function PortfolioPage() {
     }
   };
   //仮のステータスチェック関数
-  const checkStatus = async () => {
+  const handleCheckBuild = async () => {
+            console.log("チェック");
+
     setIsLoading(true);
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      const data = await startBuild();
+      const data = await checkBuildStatus();
+            console.log("チェック",data.status);
+
       if (data.status === "starting" || data.status === "running") {
+        console.log("構築中");
         setStatusMessage("構築中");
       } else if (data.status === "complete") {
+        console.log("完了");
         setStatusMessage("完了");
       } else if (data.status === "deleting") {
         setStatusMessage("削除中");
       }
     } catch (err) {
       console.error("API call failed:", err);
-    }finally {
+    } finally {
       setIsLoading(false);
     }
   };
@@ -735,6 +741,7 @@ export default function PortfolioPage() {
 
               <div>
                 <button
+                  type="button"
                   onClick={confirmAlert}
                   className="text-2xl  bg-green-500 hover:bg-green-300 duration-300 rounded-sm p-1 px-3"
                 >
@@ -748,7 +755,7 @@ export default function PortfolioPage() {
 
                   <button
                     className="text-3xl text-green-500 transition-transform duration-200 hover:scale-125 active:scale-95 disabled:opacity-50 disabled:hover:scale-100"
-                    onClick={checkStatus}
+                    onClick={handleCheckBuild}
                     title="リロード"
                     disabled={isLoading}
                   >
