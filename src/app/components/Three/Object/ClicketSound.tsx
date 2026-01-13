@@ -16,8 +16,7 @@ interface ClicketSoundProps {
 
 export const ClicketSound: React.FC<ClicketSoundProps> = ({
   url,
-  distance = 5,
-  volume = 0.5,
+  volume = 0.1,
   loop = true,
   position = [0, 0, 0],
 }) => {
@@ -33,7 +32,6 @@ export const ClicketSound: React.FC<ClicketSoundProps> = ({
       }
       // AudioContext resume & パラメータ
       if (audio.context.state === "suspended") audio.context.resume();
-      audio.setRefDistance(distance);
       audio.setLoop(loop);
       audio.setVolume(volume);
 
@@ -43,16 +41,15 @@ export const ClicketSound: React.FC<ClicketSoundProps> = ({
       }
     };
     tryPlay();
-  }, [url, distance, loop, volume]);
+  }, [url, loop, volume]);
 
   return (
     <group position={position}>
       <PositionalAudio
         ref={soundRef}
         url={url}
-        distance={distance}
         loop={loop}
-        autoplay={false} // 自前で制御するので data-autoplay は false に
+        autoplay={false} 
       />
     </group>
   );
