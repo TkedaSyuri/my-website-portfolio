@@ -6,6 +6,7 @@ export async function POST(req: NextRequest) {
     const res = await fetch(process.env.EXCUTE_API_URL!, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      cache: "no-store",
     });
     const data = await res.json();
     return NextResponse.json(data);
